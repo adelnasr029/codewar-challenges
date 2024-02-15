@@ -83,7 +83,52 @@ function countSheeps(sheep) {
     return sum
   }
   
-  //Write a function that removes the spaces from the string, then return the resultant string.
+//Write a function that removes the spaces from the string, then return the resultant string.
   function noSpace(x){
     return x.split(' ').join('')
     }
+
+//Your task is to create a function that does four basic mathematical operations.The function should take three arguments - operation(string/char), value1(number), value2(number).The function should return result of numbers after applying the chosen operation.
+function basicOp(operation, value1, value2){
+    //Code
+    if(operation == '+'){
+      return value1 + value2
+    }else if(operation == '-'){
+          return value1 - value2
+    }else if(operation == '*'){
+          return value1 * value2
+    }else{
+          return value1 / value2
+    }
+  }
+
+  //We need a function that can transform a string into a number. What ways of achieving this do you know?
+  const stringToNumber = function(str){
+    // put your code here
+    return Number(str)
+  }
+
+  //We need a function that can transform a string into a number. What ways of achieving this do you know?
+  function century(year) {
+    // Finish this :)
+    return Math.ceil(year/100)
+  }
+  function litres(time) {
+    return Math.floor(time * 0.5)
+  }
+
+  //Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.The output should be two capital letters with a dot separating them.
+  function abbrevName(name){
+    return name.split(' ').map(item => item.charAt(0)).join('.').toUpperCase()
+    }
+ 
+//Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+function digitize(n) {
+    //code here
+    return n.toString().split('').reverse().map(item=> parseInt(item))
+  }
+
+//Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
+function greet(name){
+    return `Hello, ${name} how are you doing today?`
+  }
