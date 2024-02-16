@@ -138,3 +138,32 @@ function greet(name){
     // moment of truth
     return (flower1 % 2 === 0 && flower2 % 2 !== 0? true : false) || (flower2 % 2 === 0 && flower1 % 2 !== 0? true : false)
   }
+
+//Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+  function paperwork(n, m) {
+    return n > 0 && m > 0 ? n * m : 0
+  }
+
+//Implement a function which convert the given boolean value into its string representation.
+  function booleanToString(b){
+    //your code here
+    if(b == true){
+      return b = "true"
+    }
+    else{
+      return 'false'
+    }
+  }
+
+//Create a function which answers the question "Are you playing banjo?".If your name starts with the letter "R" or lower case "r", you are playing banjo!
+  function areYouPlayingBanjo(name) {
+    return name.charAt(0) == 'R' || name.charAt(0) == 'r'? `${name} plays banjo` :
+    `${name} does not play banjo`
+  }
+  
+// Return the number (count) of vowels in the given string.We will consider a, e, i, o, u as vowels for this Kata (but not y).The input string will only consist of lower case letters and/or spaces
+  function getCount(str) {
+    return str.split('').filter(item => 'aeiouAEIOU'.includes(item)).length
+  }
+
+  console.log(getCount('pear tree'))
