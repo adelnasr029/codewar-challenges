@@ -171,3 +171,16 @@ function greet(name){
     return str.split('').filter(item => !'aeiouAEIOU'.includes(item)).join('');
   }
 
+//Welcome. In this kata, you are asked to square every digit of a number and concatenate them.For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1. (81-1-1-81)
+  function squareDigits(num){
+    return Number(num.toString().split('').map(item => Math.pow(Number(item), 2)).join(''))
+  }
+
+
+//In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+  function highAndLow(numbers){
+    let arr = numbers.split(' ').map(item => Number(item))
+    return `${Math.max(...arr)} ${Math.min(...arr)}`
+  }
+
+  console.log(highAndLow("1 2 3 4 5"))
