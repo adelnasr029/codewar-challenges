@@ -183,4 +183,20 @@ function greet(name){
     return `${Math.max(...arr)} ${Math.min(...arr)}`
   }
 
-  console.log(highAndLow("1 2 3 4 5"))
+//Create a function that checks if a number n is divisible by two numbers x AND y. All inputs are positive, non-zero numbers.
+function isDivisible(n, x, y) {
+  return (n % x == 0 )&& (n % y ==0)? true : false
+}
+
+//Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+function descendingOrder(n){
+  let num = n.toString().split('').sort((a,b)=> b - a).join('')
+return Number(num)
+  }
+
+//You are going to be given a word. Your job is to return the middle character of the word. If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+  function getMiddle(s){
+    let n =  s.length 
+      return n % 2 === 0? s.charAt(n/2 - 1) + s.charAt(n/2) : s.charAt(n/2)
+    }
+
