@@ -220,4 +220,8 @@ function filter_list(l) {
       return str.toLowerCase().split('').filter((item,index,arr) =>index == arr.indexOf(item)).join('') === str.toLowerCase() ? true : false
       }
 
-      console.log(isIsogram('moOse'))
+//Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+      function XO(str) {
+        return str.toLowerCase().split('').filter(item => item == 'o').length === str.toLowerCase().split('').filter(item => item == 'x').length
+          ? true : false
+        }
