@@ -209,3 +209,15 @@ function filter_list(l) {
   function accum(s) {
     return s.split('').map((item,ind)=> item.toUpperCase() + item.toLowerCase().repeat(ind)).join('-')
   }
+
+//Given an integral number, determine if it's a square number:
+  var isSquare = function(n){
+    return Math.sqrt(n) % 1 === 0
+    }
+
+//An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+    function isIsogram(str){
+      return str.toLowerCase().split('').filter((item,index,arr) =>index == arr.indexOf(item)).join('') === str.toLowerCase() ? true : false
+      }
+
+      console.log(isIsogram('moOse'))
