@@ -225,3 +225,13 @@ function filter_list(l) {
         return str.toLowerCase().split('').filter(item => item == 'o').length === str.toLowerCase().split('').filter(item => item == 'x').length
           ? true : false
         }
+
+//Your task is to convert strings to how they would be written by Jaden Smith. The strings are actual quotes from Jaden Smith, but they are not capitalized in the same way he originally typed them.
+ function toJadenCase(str) {
+   return str.split(' ').map(item => item.charAt(0).toUpperCase() + item.slice(1)).join(' ')
+ };
+
+//Write a function that takes in a string of one or more words, and returns the same string, but with all words that have five or more letters reversed (Just like the name of this Kata). Strings passed in will consist of only letters and spaces. Spaces will be included only when more than one word is present.
+ function spinWords(string){
+  return string.split(' ').map(item => item.length >= 5? item.split('').reverse().join('') : item ).join(' ')
+}
