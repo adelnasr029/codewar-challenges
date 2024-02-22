@@ -235,3 +235,29 @@ function filter_list(l) {
  function spinWords(string){
   return string.split(' ').map(item => item.length >= 5? item.split('').reverse().join('') : item ).join(' ')
 }
+
+
+function findOdd(arr) {
+
+  return arr.find((item, index) => arr.filter(el => el == item).length % 2)
+}
+
+//Simple, given a string of words, return the length of the shortest word(s).
+function findShort(s){
+  return  Math.min(...s.split(' ').map(item => item.length))
+}
+
+
+//In DNA strings, symbols "A" and "T" are complements of each other, as "C" and "G". Your function receives one side of the DNA (string, except for Haskell); you need to return the other complementary side. DNA strand is never empty or there is no DNA at all (again, except for Haskell).
+function dnaStrand(dna){
+  return dna.split('').map(item => item == 'A'? 'T' : item == 'T'? 'A' : item == 'C'? 'G' : 'C').join('')
+}
+
+//Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+function sumTwoSmallestNumbers(numbers) {  
+  let firstLowest = Math.min(...numbers)
+  let arr = numbers.filter(item => item !== firstLowest)
+  let secLowest = Math.min(...arr)
+  return secLowest + firstLowest
+}
+console.log(sumTwoSmallestNumbers([42, 77, 18, 34, 30]))
