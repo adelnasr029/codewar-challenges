@@ -278,3 +278,10 @@ function longest(s1, s2) {
 function friend(friends){
   return friends.filter(item => item.length == 4)
  }
+
+ function openOrSenior(data){
+  return [...data].map(item => item[1] > 7 && item[0] >= 55 ? 'Senior' : 'Open')
+}
+
+console.log(openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]
+  ))
