@@ -253,11 +253,28 @@ function dnaStrand(dna){
   return dna.split('').map(item => item == 'A'? 'T' : item == 'T'? 'A' : item == 'C'? 'G' : 'C').join('')
 }
 
-//Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
+//Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.cd
 function sumTwoSmallestNumbers(numbers) {  
   let firstLowest = Math.min(...numbers)
   let arr = numbers.filter(item => item !== firstLowest)
   let secLowest = Math.min(...arr)
   return secLowest + firstLowest
 }
-console.log(sumTwoSmallestNumbers([42, 77, 18, 34, 30]))
+
+
+//Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
+function getSum(a,b){
+  return (Math.abs(a - b) + 1) * (a+b)/2
+}
+
+//Take 2 strings s1 and s2 including only letters from a to z. Return a new sorted string, the longest possible, containing distinct letters - each taken only once - coming from s1 or s2.
+function longest(s1, s2) {
+  let arrs1 = s1.split('').filter((item,index)=> index === s1.indexOf(item))
+  let arrs2 = s2.split('').filter((item,index)=> index === s2.indexOf(item))
+  return arrs2.filter(item => !arrs1.includes(item)).concat(arrs1).sort().join('')
+}
+
+//Make a program that filters a list of strings and returns a list with only your friends name in it.If a name has exactly 4 letters in it, you can be sure that it has to be a friend of yours! Otherwise, you can be sure he's not...
+function friend(friends){
+  return friends.filter(item => item.length == 4)
+ }
