@@ -279,9 +279,13 @@ function friend(friends){
   return friends.filter(item => item.length == 4)
  }
 
+//To be a senior, a member must be at least 55 years old and have a handicap greater than 7. In this croquet club, handicaps range from -2 to +26; the better the player the lower the handicap.
  function openOrSenior(data){
   return [...data].map(item => item[1] > 7 && item[0] >= 55 ? 'Senior' : 'Open')
 }
 
-console.log(openOrSenior([[45, 12],[55,21],[19, -2],[104, 20]]
-  ))
+//Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
+function findNextSquare(sq) {
+  // Return the next square if sq is a perfect square, -1 otherwise
+  return Number.isInteger(Math.sqrt(sq))? Math.pow((Math.sqrt(sq) + 1),2) : -1
+}
