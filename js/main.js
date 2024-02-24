@@ -289,3 +289,14 @@ function findNextSquare(sq) {
   // Return the next square if sq is a perfect square, -1 otherwise
   return Number.isInteger(Math.sqrt(sq))? Math.pow((Math.sqrt(sq) + 1),2) : -1
 }
+
+
+//You have to write a function printer_error which given a string will return the error rate of the printer as a string representing a rational whose numerator is the number of errors and the denominator the length of the control string. Don't reduce this fraction to a simpler expression.
+function printerError(s) {
+  // your code
+let rangeLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm']
+let sLength = s.length
+let numcharOutRange = s.split('').filter(item => !rangeLetters.includes(item)).length 
+return `${numcharOutRange}/${sLength}`
+}
+
