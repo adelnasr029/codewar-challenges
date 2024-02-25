@@ -313,9 +313,14 @@ function addBinary(a,b) {
 //In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater than or equal to p = 1200 inhabitants?
   function nbYear(p0, percent, aug, p) {
     for(var years = 0; p0 < p; years++){
-      p0 = Math.floor(p0 + p0 * (percent/100) + aug)
+      p0 = p0 + p0 * (percent/100) + aug
     }
     return years
 
   }
-    console.log(nbYear(1500000, 0.25, 1000, 2000000))
+
+//Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+function solution(str, ending){
+  return str.endsWith(ending)
+     
+    }
