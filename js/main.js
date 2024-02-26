@@ -334,4 +334,8 @@ function solution(str, ending){
    return a > 0 && b > 0 && c > 0 && surface? true : false
 }
 
-console.log(isTriangle(7,2,2))
+//Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) e.g.: (Input --> Output)
+function rowSumOddNumbers(n) {
+  return n.split(' ')
+  }
+  console.log(rowSumOddNumbers(42))
