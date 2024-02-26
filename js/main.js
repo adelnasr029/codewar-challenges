@@ -339,3 +339,8 @@ function rowSumOddNumbers(n) {
   return n.split(' ')
   }
   console.log(rowSumOddNumbers(42))
+
+  //Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+  const binaryArrayToNumber = arr => {
+    return parseInt(arr.join(''),2)
+  };
