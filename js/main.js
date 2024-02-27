@@ -334,12 +334,7 @@ function solution(str, ending){
    return a > 0 && b > 0 && c > 0 && surface? true : false
 }
 
-//Calculate the sum of the numbers in the nth row of this triangle (starting at index 1) e.g.: (Input --> Output)
-function rowSumOddNumbers(n) {
-  return n.split(' ')
-  }
-  console.log(rowSumOddNumbers(42))
-
+//Calculate the sum of the numbers in the nth row of this triangle (starting at 
   //Given an array of ones and zeroes, convert the equivalent binary value to an integer.
   const binaryArrayToNumber = arr => {
     return parseInt(arr.join(''),2)
@@ -348,4 +343,9 @@ function rowSumOddNumbers(n) {
   //Given a list of integers, determine whether the sum of its elements is odd or even.
   function oddOrEven(array) {
     return array.reduce((acc,c) => acc + c, 0) % 2 === 0? 'even' : 'odd'
+    }
+
+  //Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+    function reverseWords(str) {
+      return str.split(' ').map(item=> item.split('').reverse().join('')).join(' ')
     }
