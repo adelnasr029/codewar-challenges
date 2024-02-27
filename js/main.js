@@ -349,3 +349,8 @@ function solution(str, ending){
     function reverseWords(str) {
       return str.split(' ').map(item=> item.split('').reverse().join('')).join(' ')
     }
+
+//Write a function which converts the input string to uppercase.
+    function makeUpperCase(str) {
+      return str.toUpperCase()
+    }
