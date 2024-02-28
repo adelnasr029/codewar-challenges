@@ -373,3 +373,24 @@ function solution(str, ending){
   function reverseWords(str){
     return str.split(' ').reverse().join(' ')
   }
+
+  //Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+  function greet (name, owner) {
+    return name == owner? 'Hello boss' : 'Hello guest'
+  }
+
+  function removeUrlAnchor(url){
+    let arr = url.split('')
+    if(arr.includes('#')){
+      let result = []
+      for(let i = 0; i < arr.indexOf('#'); i++){
+        result.push(arr[i])
+      }
+      return result.join('')
+    }else{
+      return url
+    }
+
+  }
+
+console.log(removeUrlAnchor('www.codewars.com/katas/'))
