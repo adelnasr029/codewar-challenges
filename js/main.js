@@ -368,5 +368,3 @@ function solution(str, ending){
      }
       return sheepNum
     }
-
-    console.log(countSheep(3))
