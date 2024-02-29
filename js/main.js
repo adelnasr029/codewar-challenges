@@ -404,3 +404,10 @@ function solution(str, ending){
   var number=function(array){
     return array.map((item,indx) => `${indx+1}: ${item}`)
   }
+
+//Write a function that returns both the minimum and maximum number of the given list/array.
+  function minMax(arr){
+    let min = Math.min(...arr)
+    let max = Math.max(...arr)
+    return [min,max]
+  }
