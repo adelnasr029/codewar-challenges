@@ -415,3 +415,10 @@ function solution(str, ending){
 //You are given an odd-length array of integers, in which all of them are the same, except for one single number.Complete the method which accepts such an array, and returns that single different number.
   function stray(numbers) {
    return numbers.find(num => numbers.indexOf(num) === numbers.lastIndexOf(num))  }
+
+//Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
+function sortByLength (array) {
+  return array.sort((a,b) => a.length - b.length)
+ }
+  
+
