@@ -440,4 +440,8 @@ function duplicateCount(text){
   return text.split('').filter((item,index,arr) => arr.indexOf(item) !== arr.lastIndexOf(item)).filter((item,ind,arr) => arr.indexOf(item) == ind ).length
 }
 
-console.log(duplicateCount(''))
+//The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+function duplicateEncode(word){
+ return  word.toLowerCase().split('').map((item,index,arr) => arr.indexOf(item) == arr.lastIndexOf(item)? '(' : ')').join('')
+}
+
