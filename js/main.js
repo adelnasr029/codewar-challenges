@@ -434,3 +434,10 @@ function sortByLength (array) {
 function createPhoneNumber(numbers){
   return `(${numbers.slice(0,3).join('')}) ${numbers.slice(3,6).join('')}-${numbers.slice(6,10).join('')}`
 }
+
+//Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+function duplicateCount(text){
+  return text.split('').filter((item,index,arr) => arr.indexOf(item) !== arr.lastIndexOf(item)).filter((item,ind,arr) => arr.indexOf(item) == ind ).length
+}
+
+console.log(duplicateCount(''))
