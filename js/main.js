@@ -469,4 +469,9 @@ const quarterOf = (month) => {
   function correct(string){
     return string.split('').map(item => item == '5'? 'S' : item == '0'? 'O' : item == '1'? 'I' : item)
   }
-  console.log(correct("DUBL1N"))
+
+//Create a function that accepts a string and a single character, and returns an integer of the count of occurrences the 2nd argument is found in the first one.
+  function strCount(str, letter){  
+    return str.split('').filter((item,index,arr) => item == letter).leng
+  }
+  console.log(strCount('hello', 'o'))
