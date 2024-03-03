@@ -474,4 +474,18 @@ const quarterOf = (month) => {
   function strCount(str, letter){  
     return str.split('').filter((item,index,arr) => item == letter).leng
   }
-  console.log(strCount('hello', 'o'))
+
+//Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+  function removeExclamationMarks(s) {
+    return s.split('').filter(item => item != '!').join('')
+  }
+
+  function betterThanAverage(classPoints, yourPoints) {
+    let  arr = classPoints.concat(yourPoints)
+    console.log(arr)
+    let average = arr.reduce((acc,c) => acc + c, 0)/arr.length
+return yourPoints > average? 'True' : 'False!'
+
+    }
+
+    console.log(betterThanAverage([2,3], 5))
