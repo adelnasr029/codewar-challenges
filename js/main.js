@@ -484,8 +484,7 @@ const quarterOf = (month) => {
     let  arr = classPoints.concat(yourPoints)
     console.log(arr)
     let average = arr.reduce((acc,c) => acc + c, 0)/arr.length
-return yourPoints > average? 'True' : 'False!'
+return yourPoints > average? true : false
 
     }
 
-    console.log(betterThanAverage([2,3], 5))
