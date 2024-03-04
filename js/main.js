@@ -480,11 +480,5 @@ const quarterOf = (month) => {
     return s.split('').filter(item => item != '!').join('')
   }
 
-  function betterThanAverage(classPoints, yourPoints) {
-    let  arr = classPoints.concat(yourPoints)
-    console.log(arr)
-    let average = arr.reduce((acc,c) => acc + c, 0)/arr.length
-return yourPoints > average? true : false
 
-    }
 
