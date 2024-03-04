@@ -1,12 +1,6 @@
-//Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
-function evenOrOdd(number) {
-    return number % 2 === 0? 'Even' : 'Odd'
-  }
 
-  //In this simple assignment you are given a number and have to make it negative. But maybe the number is already negative?
-  function makeNegative(num) {
-    return num > 0? -num : num
-  }
+
+
 
 //You get an array of numbers, return the sum of all of the positives ones.
   function positiveSum(arr) {
@@ -305,180 +299,73 @@ function validatePIN(pin) {
   return /^(\d{4}|\d{6})$/.test(pin)
 }
 
-//Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
-function addBinary(a,b) {
-  return (a+b).toString(2)
-  }
-
-//In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater than or equal to p = 1200 inhabitants?
-  function nbYear(p0, percent, aug, p) {
-    for(var years = 0; p0 < p; years++){
-      p0 = p0 + p0 * (percent/100) + aug
-    }
-    return years
-
-  }
-
-//Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
-function solution(str, ending){
-  return str.endsWith(ending)
-     
-    }
 
 
-//Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
-    function isTriangle(a,b,c)
-{
-   let s = (a+b+c)/2
-   let surface = Math.sqrt(s*(s - a)*(s - b)*(s - c))
-   return a > 0 && b > 0 && c > 0 && surface? true : false
-}
 
-//Calculate the sum of the numbers in the nth row of this triangle (starting at 
-  //Given an array of ones and zeroes, convert the equivalent binary value to an integer.
-  const binaryArrayToNumber = arr => {
-    return parseInt(arr.join(''),2)
-  };
 
-  //Given a list of integers, determine whether the sum of its elements is odd or even.
-  function oddOrEven(array) {
-    return array.reduce((acc,c) => acc + c, 0) % 2 === 0? 'even' : 'odd'
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   //Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
-    function reverseWords(str) {
-      return str.split(' ').map(item=> item.split('').reverse().join('')).join(' ')
-    }
-
-//Write a function which converts the input string to uppercase.
-    function makeUpperCase(str) {
-      return str.toUpperCase()
-    }
-//Create a function which translates a given DNA string into RN
-    function DNAtoRNA(dna) {
-      return dna.split('').map(item => item === 'T'? 'U' : item)
-    }
-
-
-//Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
-    var countSheep = function (num){
-      var sheepNum = ''
-      for(let i = 1; i <= num; i++){
-        sheepNum += `${i} sheep...`
-     }
-      return sheepNum
-    }
-
-  //Complete the solution so that it reverses all of the words within the string passed in.
-  function reverseWords(str){
-    return str.split(' ').reverse().join(' ')
-  }
-
-  //Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
-  function greet (name, owner) {
-    return name == owner? 'Hello boss' : 'Hello guest'
-  }
-//Complete the function/method so that it returns the url with anything after the anchor (#) removed.
-  function removeUrlAnchor(url){
-    let arr = url.split('')
-    if(arr.includes('#')){
-      let result = []
-      for(let i = 0; i < arr.indexOf('#'); i++){
-        result.push(arr[i])
-      }
-      return result.join('')
-    }else{
-      return url
-    }
-
+  function reverseWords(str) {
+    return str.split(' ').map(item=> item.split('').reverse().join('')).join(' ')
   }
 
 
-//Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with the lowest index. If you get an empty array/list, return an empty array/list.
-  function removeSmallest(numbers) {
-    let smallest = numbers.indexOf(Math.min(...numbers)) 
-    return numbers.filter((item,indx,arr) => indx !== smallest)
-  }
-
-  //Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.Write a function which takes a list of strings and returns each line prepended by the correct number.The numbering starts at 1. The format is n: string. Notice the colon and space in between.
-  var number=function(array){
-    return array.map((item,indx) => `${indx+1}: ${item}`)
-  }
-
-//Write a function that returns both the minimum and maximum number of the given list/array.
-  function minMax(arr){
-    let min = Math.min(...arr)
-    let max = Math.max(...arr)
-    return [min,max]
-  }
-
-//You are given an odd-length array of integers, in which all of them are the same, except for one single number.Complete the method which accepts such an array, and returns that single different number.
-  function stray(numbers) {
-   return numbers.find(num => numbers.indexOf(num) === numbers.lastIndexOf(num))  }
-
-//Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
-function sortByLength (array) {
-  return array.sort((a,b) => a.length - b.length)
- }
-
-//You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
- function likes(names) {
-  return  names.length == 0?  `no one likes this` :
-   names.length == 1? `${names[0]} likes this` :
-  names.length == 2? `${names[0]} and ${names[1]} like this` :
-  names.length == 3? `${names[0]}, ${names[1]} and ${names[2]} likes this` :
-  `${names[0]}, ${names[1]} and ${names.length -2} others like this`
-}
-
-//Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
-function createPhoneNumber(numbers){
-  return `(${numbers.slice(0,3).join('')}) ${numbers.slice(3,6).join('')}-${numbers.slice(6,10).join('')}`
-}
-
-//Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
-function duplicateCount(text){
-  return text.split('').filter((item,index,arr) => arr.indexOf(item) !== arr.lastIndexOf(item)).filter((item,ind,arr) => arr.indexOf(item) == ind ).length
-}
-
-//The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
-function duplicateEncode(word){
- return  word.toLowerCase().split('').map((item,index,arr) => arr.indexOf(item) == arr.lastIndexOf(item)? '(' : ')').join('')
-}
 
 
 
-//Write function bmi that calculates body mass index (bmi = weight / height2).if bmi <= 18.5 return "Underweight"if bmi <= 25.0 return "Normal"if bmi <= 30.0 return "Overweight"ifbmi> 30 return "Obese"
-function bmi(weight, height) {
-  return weight/Math.pow(height,2) <= 18.5? "Underweight" : weight/Math.pow(height,2) <= 25.0? "Normal" : weight/Math.pow(height,2) <= 30.0? "Overweight" : 'Obese'
-}
 
-const reverseSeq = n => {
-  let arr = []
-  for(let i = 1; i <= n; i++){
-    arr.push(i)
-  }
-  return arr.sort((a,b) => b - a)
-};
 
-//Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
-const quarterOf = (month) => {
-  return month <= 3 ? 1 : month <= 6 ? 2 : month <= 9 ? 3 : 4  
-  }
 
-  //Character recognition software is widely used to digitise printed texts. Thus the texts can be edited, searched and stored on a computer.
-  function correct(string){
-    return string.split('').map(item => item == '5'? 'S' : item == '0'? 'O' : item == '1'? 'I' : item)
-  }
 
-//Create a function that accepts a string and a single character, and returns an integer of the count of occurrences the 2nd argument is found in the first one.
-  function strCount(str, letter){  
-    return str.split('').filter((item,index,arr) => item == letter).leng
-  }
 
-//Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
-  function removeExclamationMarks(s) {
-    return s.split('').filter(item => item != '!').join('')
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
