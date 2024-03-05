@@ -332,6 +332,11 @@ function validatePIN(pin) {
     return str.split(' ').map(item=> item.split('').reverse().join('')).join(' ')
   }
 
+  function gaslighting(shirtWord,yourWord,friendsLetters) {
+    return  yourWord !== friendsLetters ? true : false
+  }
+  console.log(gaslighting("snack","snack","snack"))
+
 
 
 
