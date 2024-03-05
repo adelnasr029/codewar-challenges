@@ -332,14 +332,7 @@ function validatePIN(pin) {
     return str.split(' ').map(item=> item.split('').reverse().join('')).join(' ')
   }
 
-  function feast(beast, dish) {
-    let dishArr = dish.split('')
-     let beastArr = beast.split('')
-     console.log(dishArr[dishArr.length - 1])
-     console.log(beastArr[beastArr.length - 1])
-     return dishArr[0] == beastArr[0] && dishArr[dishArr.length - 1] == beastArr[dishArr.length -1] ? true : false
-   }
-   console.log(feast("great blue heron", "garlic naan"))
+
 
 
 
