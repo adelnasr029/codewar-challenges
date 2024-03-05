@@ -332,10 +332,10 @@ function validatePIN(pin) {
     return str.split(' ').map(item=> item.split('').reverse().join('')).join(' ')
   }
 
-  function gaslighting(shirtWord,yourWord,friendsLetters) {
-    return  yourWord !== friendsLetters ? true : false
+  function hero(bullets, dragons){
+    return bullets/2 == dragons ? true : false
   }
-  console.log(gaslighting("snack","snack","snack"))
+  console.log(hero(10,5))
 
 
 
