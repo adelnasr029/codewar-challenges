@@ -333,12 +333,6 @@ function validatePIN(pin) {
   }
 
 
-  function shortcut (string) {
-  let vowels = ['a', 'e', 'i', 'u', 'o']
-    return string.split('').filter((item,index,arr) =>  !vowels.includes(item) ).join('')
-  }
-
-  console.log(shortcut('hello'))
 
 
 
