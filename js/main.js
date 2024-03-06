@@ -333,17 +333,12 @@ function validatePIN(pin) {
   }
 
 
-  function groupAnagrams(words){
-
-    return words.map(
-      (item,indx,arr) =>  item.includes(item)? item : 0
-        )
+  function shortcut (string) {
+  let vowels = ['a', 'e', 'i', 'u', 'o']
+    return string.split('').filter((item,index,arr) =>  !vowels.includes(item) ).join('')
   }
-console.log(groupAnagrams(["tsar", "rat", "tar", "star", "tars", "cheese"]))
-  
 
-
-console.log(['i', 'k', 'k'].join(''))
+  console.log(shortcut('hello'))
 
 
 
