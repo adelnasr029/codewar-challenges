@@ -332,7 +332,10 @@ function validatePIN(pin) {
     return str.split(' ').map(item=> item.split('').reverse().join('')).join(' ')
   }
 
-
+  function remove (string) {
+    return string.endsWith('!')? string.slice(0,-1) : string
+  }
+  console.log(remove("Hi! Hi!"))
 
 
 
