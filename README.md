@@ -1,7 +1,6 @@
 # CodeWars Challenges: <a target="_blank" href="https://www.codewars.com/users/Adel%20Abdulazeem" >Visit Here</a>  
 
 ![Codewars](https://github.r2v.ch/codewars?user=Adel%20Abdulazeem&stroke=COLOR)
-A repository filled with codewars challenges (kata). Currently Ranked #1305 on the global leaderboard, Completed over 1000+ challenges and Push 5 solutions every week.
 
 ## How It's Made:
 
