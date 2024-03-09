@@ -300,25 +300,10 @@ function validatePIN(pin) {
 }
 
 
-//remove number from a string
-//P: string might contains num, char, spacing
-//R: string without a num
-//E: 
-//P:
-
-function stringClean(s){
-  //split string
-  //loop through the resulted arr and filter it out from num
-  //join the filtered elements into one str
-  return s.split('').filter((item,index,arr) => !Number(item) && item !== '0').join('')
-
-}
-
-console.log(stringClean('so0lved')) // output -> 'This looks great!'
 
 
 
-console.log(Number('1'))
+
 
 
 
