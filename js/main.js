@@ -300,31 +300,25 @@ function validatePIN(pin) {
 }
 
 
-//arrang
-//P: list S of numbers, + || -
-//R: list of T
+//remove number from a string
+//P: string might contains num, char, spacing
+//R: string without a num
 //E: 
 //P:
-function arrange(s) {
-  //given s as an array of numbers
-  //remove 1st and last from S, add them to list of T
-  //repeat process till list S gets emptied
-  let T = []
-  for(let i = 0; i < s.length; i++){
-    T += s.slice(i,-i)
-  }
-  return T
+
+function stringClean(s){
+  //split string
+  //loop through the resulted arr and filter it out from num
+  //join the filtered elements into one str
+  return s.split('').filter((item,index,arr) => !Number(item) && item !== '0').join('')
+
 }
 
-let slicedElements = [9, 7, -2, 8, 5, -3, 6, 5, 1].slice(1,-1)
-console.log(arrange([9, 7, -2, 8, 5, -3, 6, 5, 1]))
-arrange([4, 3, 2])
+console.log(stringClean('so0lved')) // output -> 'This looks great!'
 
 
 
-
-
-
+console.log(Number('1'))
 
 
 
