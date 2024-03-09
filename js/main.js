@@ -300,11 +300,25 @@ function validatePIN(pin) {
 }
 
 
+//arrang
+//P: list S of numbers, + || -
+//R: list of T
+//E: 
+//P:
+function arrange(s) {
+  //given s as an array of numbers
+  //remove 1st and last from S, add them to list of T
+  //repeat process till list S gets emptied
+  let T = []
+  for(let i = 0; i < s.length; i++){
+    T += s.slice(i,-i)
+  }
+  return T
+}
 
-
-
-
-
+let slicedElements = [9, 7, -2, 8, 5, -3, 6, 5, 1].slice(1,-1)
+console.log(arrange([9, 7, -2, 8, 5, -3, 6, 5, 1]))
+arrange([4, 3, 2])
 
 
 
