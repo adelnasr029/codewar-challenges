@@ -306,7 +306,15 @@ function validatePIN(pin) {
 
 
 
+function getDrinkByProfession(param){
+ let para = param.toLowerCase()
+console.log(para)
 
+  return  "Jabroni" == "Jabroni"
+          
+  }
+
+  console.log(getDrinkByProfession('JabrOni'))
 
 
 
