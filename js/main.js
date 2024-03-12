@@ -305,7 +305,11 @@ function validatePIN(pin) {
 
 
 
+var capitals = function (word) {
+  return word.split('').map((item,index,arr) => item == item.toUpperCase()? index : '').filter(item => item !== '')
+};
 
+console.log(capitals('CodEWaRs'))
 
 
 
