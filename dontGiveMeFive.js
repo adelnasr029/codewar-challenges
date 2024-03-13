@@ -16,6 +16,6 @@ function dontGiveMeFive(start, end){
  for(let i = start; i <= end; i++){
     result.push(i);
  }
- return result.map(item => String(item)).filter((item,index,arr) => !item.includes('5')) 
+ return result.map(item => String(item)).filter((item,index,arr) => !item.includes('5')).length
 }
 console.log(dontGiveMeFive(4,17))
