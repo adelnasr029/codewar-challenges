@@ -305,17 +305,7 @@ function validatePIN(pin) {
 
 
 
-function dontGiveMeFive(start, end){
-  //declare a var and assign empty arr to it
-  //loop through range bt 2 arg adding the num bt them to the array including the val start and end parameters
-  //
-   let result = []
-   for(let i = start; i <= end; i++){
-      result.push(i);
-   }
-   return result.map(item => String(item)).filter((item,index,arr) => !item.includes('5')) 
-  }
-  console.log(dontGiveMeFive(4,17))
+
 
 
 
