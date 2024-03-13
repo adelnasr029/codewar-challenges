@@ -305,11 +305,10 @@ function validatePIN(pin) {
 
 
 
-var capitals = function (word) {
-  return word.split('').map((item,index,arr) => item == item.toUpperCase()? index : '').filter(item => item !== '')
-};
-
-console.log(capitals('CodEWaRs'))
+function removeDuplicateWords (s) {
+  return s.split(' ').filter((item,index,arr) => index == arr.indexOf(item)).join(' ')
+  }
+  console.log(removeDuplicateWords('EsctYfnUtW wfIzwtYZT dG YkiF xQGrIS RoZsL EsctYfnUtW dG dG wfIzwtYZT x EsctYfnUtW xQGrIS dG wfIzwtYZT zifsG Qxo zifsG wfIzwtYZT YkiF RoZsL dG x RoZsL XIDZAFad EsctYfnUtW jjtlg Ye EsctYfnUtW Qxo Qxo MJgWZe x wfIzwtYZT YkiF wfIzwtYZT YkiF YkiF Qxo MJgWZe Ye Ye wfIzwtYZT YkiF Qxo MJgWZe wfIzwtYZT dG RoZsL n Ye x MJgWZe Ye wfIzwtYZT jjtlg dG zifsG dG Ye Qxo RoZsL YkiF YkiF n dG x Ye RoZsL EsctYfnUtW Ye EsctYfnUtW zifsG zifsG zifsG Qxo wfIzwtYZT Ye YkiF RoZsL x MJgWZe RoZsL dG EsctYfnUtW Qxo zifsG zifsG MJgWZ'))
 
 
 
