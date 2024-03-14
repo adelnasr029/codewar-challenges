@@ -348,5 +348,3 @@ function validatePIN(pin) {
 
 
 
-
-
