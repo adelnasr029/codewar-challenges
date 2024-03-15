@@ -313,7 +313,13 @@ function validatePIN(pin) {
 // console.log([15, 7, 3, -8] == [15, 7, 3, -8].sort((a,b) => a - b))
 
 
+function minSum(arr) {
+  return arr.sort( (a,b) => a-b )
+            .slice(0, arr.length/2)
+            // .reduce( (acc,curr,index) => acc += curr * arr[ arr.length - index - 1 ], 0 )
+}
 
+console.log(minSum([5,4,2,3]))
 
 
 
