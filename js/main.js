@@ -303,11 +303,14 @@ function validatePIN(pin) {
 
 
 
+// function isSortedAndHow(array) {
+//   return  array.sort((a,b) => a - b) === array ? "yes, ascending" : array === array.sort((a,b) => b - a) ? "yes, descending" : "no"
+// }
+
+// console.log(isSortedAndHow([5, 7, 3, 8]))
 
 
-
-
-
+// console.log([15, 7, 3, -8] == [15, 7, 3, -8].sort((a,b) => a - b))
 
 
 
