@@ -313,23 +313,19 @@ function validatePIN(pin) {
 // console.log([15, 7, 3, -8] == [15, 7, 3, -8].sort((a,b) => a - b))
 
 
-function checkExam(array1, array2) {
-  let resultArr = []
-  
-  for(let i = 0; i < array1.length; i++){
-    for(let j = 0; i < array2.length; i++){
-      array1[i] == array2[j] ? resultArr.push(4) : resultArr.push(-1)
-    }
+
+
+function countDevelopers(list) {
+  return list.filter(item => item.continent == 'Europe' && item.language == 'JavaScript').length
   }
-  
-  return resultArr.reduce((acc,c) => acc + c, 0)
-  
-}
-
-console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]))
 
 
-
+  console.log([
+    { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
+    { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
+    { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
+    { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
+  ])
 
 
 
