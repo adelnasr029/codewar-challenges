@@ -313,17 +313,19 @@ function validatePIN(pin) {
 // console.log([15, 7, 3, -8] == [15, 7, 3, -8].sort((a,b) => a - b))
 
 
-function divCon(x){
-  return x.filter(item => typeof item == 'number' ).reduce((acc,c) => acc + c) - x.filter(item => typeof item == 'string').map(item => Number(item)).reduce((acc,c) => acc + c)
-  }
-
-  console.log(divCon([9, 3, '7', '3']))
+function isRubyComing(list) {
+  return list.filter(item => item.language === 'Ruby' )? true : false
+}
 
 
 
 
 
-
+console.log(isRubyComing([
+  { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
+  { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python' } 
+]
+))
 
 
 
