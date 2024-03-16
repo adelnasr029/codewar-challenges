@@ -313,20 +313,20 @@ function validatePIN(pin) {
 // console.log([15, 7, 3, -8] == [15, 7, 3, -8].sort((a,b) => a - b))
 
 
-function isRubyComing(list) {
-  return list.filter(item => item.language === 'Ruby' )? true : false
+function checkExam(array1, array2) {
+  let resultArr = []
+  
+  for(let i = 0; i < array1.length; i++){
+    for(let j = 0; i < array2.length; i++){
+      array1[i] == array2[j] ? resultArr.push(4) : resultArr.push(-1)
+    }
+  }
+  
+  return resultArr.reduce((acc,c) => acc + c, 0)
+  
 }
 
-
-
-
-
-console.log(isRubyComing([
-  { firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java' },
-  { firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python' } 
-]
-))
-
+console.log(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]))
 
 
 
