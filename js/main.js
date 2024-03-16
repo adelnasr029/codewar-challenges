@@ -315,20 +315,16 @@ function validatePIN(pin) {
 
 
 
-function countDevelopers(list) {
-  return list.filter(item => item.continent == 'Europe' && item.language == 'JavaScript').length
-  }
-
-
-  console.log([
-    { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'JavaScript' },
-    { firstName: 'Maia', lastName: 'S.', country: 'Tahiti', continent: 'Oceania', age: 28, language: 'JavaScript' },
-    { firstName: 'Shufen', lastName: 'L.', country: 'Taiwan', continent: 'Asia', age: 35, language: 'HTML' },
-    { firstName: 'Sumayah', lastName: 'M.', country: 'Tajikistan', continent: 'Asia', age: 30, language: 'CSS' }
-  ])
 
 
 
+function maxDiff(list) {
+  
+    return  list !== undefined && list.length !== 0? Math.max(...list) - Math.min(...list) : 0
+ 
+};
+
+console.log(maxDiff([0]))
 
 
 
