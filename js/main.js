@@ -315,16 +315,11 @@ function validatePIN(pin) {
 
 
 
+console.log([1,3,3,3,3,3].slice(-4))
 
 
 
-function maxDiff(list) {
-  
-    return  list !== undefined && list.length !== 0? Math.max(...list) - Math.min(...list) : 0
- 
-};
 
-console.log(maxDiff([0]))
 
 
 
