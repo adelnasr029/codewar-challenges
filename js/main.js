@@ -312,18 +312,13 @@ function validatePIN(pin) {
 
 // console.log([15, 7, 3, -8] == [15, 7, 3, -8].sort((a,b) => a - b))
 
+function tidyNumber(n){
+  return n == String(n).split('').map(item => Number(item)).sort((a,b) => a - b).join('')
+}
+
+console.log(tidyNumber(12))
 
 
-
-function capitalize(s){
-  let res = []
-  let firstEl =  s.split('').map((item,index,arr) => index % 2 == 0? item.toUpperCase() : item ).join('')
-  let secEl = s.split('').map((item,index,arr) => index % 2 !== 0? item.toUpperCase() : item ).join('')
-
-  return [firstEl,secEl]
-};
-
-console.log(capitalize('abracadabra'))
 
 
 
