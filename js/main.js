@@ -300,13 +300,14 @@ function validatePIN(pin) {
 }
 
 
+function getGrade (s1, s2, s3) {
+  let average = (s1+s2+s3)/3
+  return average < 60 ? 'F' : average < 70? 'D' : average < 80? 'C':
+         average < 90 ? 'B' : 'A'
+}
 
-function sumArray(array) {
-  return array.length < 3  || array == undefined ? 0 : 
-  array.sort((a,b) => a - b).slice(1,-1).reduce((acc,c) => acc + c, 0) 
-  }
+console.log(getGrade(100,85,96))
 
-  console.log(sumArray(null))
 
 
 
