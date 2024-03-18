@@ -300,15 +300,11 @@ function validatePIN(pin) {
 }
 
 
-function getGrade (s1, s2, s3) {
-  let average = (s1+s2+s3)/3
-  return average < 60 ? 'F' : average < 70? 'D' : average < 80? 'C':
-         average < 90 ? 'B' : 'A'
+function rentalCarCost(d) {
+  return d >= 7 ? (d*40) - 50 : d >= 3 ? (d*40) - 20 : d * 40
 }
 
-console.log(getGrade(100,85,96))
-
-
+console.log(rentalCarCost(8))
 
 
 
