@@ -303,20 +303,18 @@ function validatePIN(pin) {
 
 
 
-// function isSortedAndHow(array) {
-//   return  array.sort((a,b) => a - b) === array ? "yes, ascending" : array === array.sort((a,b) => b - a) ? "yes, descending" : "no"
-// }
+const rps = (p1, p2) => {
+if( (p1 == "scissors" && p2 == "paper") || (p1 == 'rock' && p2 == 'scissors') ){
+ return  "Player 1 won!"
+}else if((p1 == 'scissors' && p2 == 'rock') || (p1 == 'paper' && p2 == 'scissors')){
+  return "Player 2 won!"
+}else{
 
-// console.log(isSortedAndHow([5, 7, 3, 8]))
-
-
-// console.log([15, 7, 3, -8] == [15, 7, 3, -8].sort((a,b) => a - b))
-
-function tidyNumber(n){
-  return n == String(n).split('').map(item => Number(item)).sort((a,b) => a - b).join('')
+  return 'Draw!'
+}
 }
 
-console.log(tidyNumber(12))
+console.log(rps('rock', 'scissors'))
 
 
 
@@ -324,7 +322,7 @@ console.log(tidyNumber(12))
 
 
 
-
+ 
 
 
 
