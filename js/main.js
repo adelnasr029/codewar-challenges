@@ -301,20 +301,14 @@ function validatePIN(pin) {
 
 
 
+function sumArray(array) {
+  return array.length < 3  || array == undefined ? 0 : 
+  array.sort((a,b) => a - b).slice(1,-1).reduce((acc,c) => acc + c, 0) 
+  }
+
+  console.log(sumArray(null))
 
 
-const rps = (p1, p2) => {
-if( (p1 == "scissors" && p2 == "paper") || (p1 == 'rock' && p2 == 'scissors') ){
- return  "Player 1 won!"
-}else if((p1 == 'scissors' && p2 == 'rock') || (p1 == 'paper' && p2 == 'scissors')){
-  return "Player 2 won!"
-}else{
-
-  return 'Draw!'
-}
-}
-
-console.log(rps('rock', 'scissors'))
 
 
 
