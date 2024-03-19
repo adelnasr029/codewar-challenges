@@ -300,12 +300,12 @@ function validatePIN(pin) {
 }
 
 
-function rentalCarCost(d) {
-  return d >= 7 ? (d*40) - 50 : d >= 3 ? (d*40) - 20 : d * 40
+
+function enough(cap, on, wait) {
+  return cap > on && wait < (cap - on) ? 0 : Math.abs(wait - on)
 }
 
-console.log(rentalCarCost(8))
-
+console.log(enough(79,67,62))
 
 
 
