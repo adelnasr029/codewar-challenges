@@ -301,11 +301,12 @@ function validatePIN(pin) {
 
 
 
-function enough(cap, on, wait) {
-  return cap > on && wait < (cap - on) ? 0 : Math.abs(wait - on)
+function spacey(array) {
+  let newArr = []
+  return array.map((item,index,arr) => newArr.concat(item) )
 }
 
-console.log(enough(79,67,62))
+console.log(spacey(["kevin","has","no","space"]))
 
 
 
