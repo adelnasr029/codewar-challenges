@@ -301,14 +301,16 @@ function validatePIN(pin) {
 
 
 
-function spacey(array) {
-  let newArr = []
-  return array.map((item,index,arr) => newArr.concat(item) )
-}
-
-console.log(spacey(["kevin","has","no","space"]))
 
 
+function htmlspecialchars(formData) {
+  console.log(formData.split(''))
+  return formData.split('').map(item => { 
+
+     return item == '<'? '&lt;' : item == '>'? '&gt;' : item == '"'? '&quot;' : item == '&'? '&amp' : item
+  }).join('')
+  }
+  console.log(htmlspecialchars("<script>alert('Website Hacked!');</script>"))
 
 
 
