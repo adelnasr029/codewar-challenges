@@ -300,17 +300,11 @@ function validatePIN(pin) {
 }
 
 
-function getFirstPython(list) {
-  let newObj = list.find(item => item.language == 'Python' )
- return   newObj?`${newObj.firstName}, ${newObj.country}` : 'There will be no Python developers'
+
+function maxTriSum(numbers){
+  return numbers.filter((item,index,arr) => index == arr.indexOf(item)).sort((a,b) => a - b).slice(-3).reduce((acc,c) => acc + c)
 }
-
-console.log(getFirstPython([
-  { firstName: 'Mark', lastName: 'G.', country: 'Scotland', continent: 'Europe', age: 22, language: 'JavaScript' },
-  { firstName: 'Victoria', lastName: 'T.', country: 'Puerto Rico', continent: 'Americas', age: 30, language: 'Python' },
-  { firstName: 'Emma', lastName: 'B.', country: 'Norway', continent: 'Europe', age: 19, language: 'Clojure' }
-]))
-
+console.log(maxTriSum([2,1,8,0,6,4,8,6,2,4]))
 
 
 
