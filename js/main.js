@@ -301,10 +301,7 @@ function validatePIN(pin) {
 
 
 
-function maxTriSum(numbers){
-  return numbers.filter((item,index,arr) => index == arr.indexOf(item)).sort((a,b) => a - b).slice(-3).reduce((acc,c) => acc + c)
-}
-console.log(maxTriSum([2,1,8,0,6,4,8,6,2,4]))
+
 
 
 
