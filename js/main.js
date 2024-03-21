@@ -300,27 +300,19 @@ function validatePIN(pin) {
 }
 
 
-
-
-
-function greetDevelopers(list) {
-   list.forEach(item => {
-     item.greeting = `Hi ${item.firstName}, what do you like the most about ${item.language}? `
-  })
-  return list
+function getFirstPython(list) {
+  let newObj = list.find(item => item.language == 'Python' )
+ return   newObj?`${newObj.firstName}, ${newObj.country}` : 'There will be no Python developers'
 }
 
-console.log(greetDevelopers([
-  {
-    firstName: 'Sofia', lastName: 'I.', country: 'Argentina', continent: 'Americas', age: 35, language: 'Java',
-  },
-  {
-    firstName: 'Lukas', lastName: 'X.', country: 'Croatia', continent: 'Europe', age: 35, language: 'Python',
-  },
-  {
-    firstName: 'Madison', lastName: 'U.', country: 'United States', continent: 'Americas', age: 32, language: 'Ruby',
-  },
+console.log(getFirstPython([
+  { firstName: 'Mark', lastName: 'G.', country: 'Scotland', continent: 'Europe', age: 22, language: 'JavaScript' },
+  { firstName: 'Victoria', lastName: 'T.', country: 'Puerto Rico', continent: 'Americas', age: 30, language: 'Python' },
+  { firstName: 'Emma', lastName: 'B.', country: 'Norway', continent: 'Europe', age: 19, language: 'Clojure' }
 ]))
+
+
+
 
 
 
