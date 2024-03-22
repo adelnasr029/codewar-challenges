@@ -302,16 +302,11 @@ function validatePIN(pin) {
 
 
 
-function calc(x){
-  let total1 = x.split('').map(item => String(item.charCodeAt())).join('')
-  console.log(total1)
-  let total2 = total1.replace(total1[total1.length-1], 1)
-  console.log(total2)
-  return total1.split('').reduce((acc,c) => Number(acc) + Number(c)) - 
-          total2.split('').reduce((acc,c) => Number(acc) + Number(c))
- }
+function solve(arr){
+  return arr.filter((item,index,a) => index == a.lastIndexOf(item)).reduce((acc,c) => acc + c)
+};
 
- console.log(calc('ifkhchlhfd'))
+console.log(solve([1,-1,2,-2,3,3]))
 
 
 
