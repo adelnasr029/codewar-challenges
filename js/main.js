@@ -301,17 +301,17 @@ function validatePIN(pin) {
 
 
 
-function pairs(ar){
-let count = 0
-  for(let i = 0; i < ar.length; i+=2){
-    if(Math.abs(ar[i]) - Math.abs(ar[i+1]) == 1)
-        count++
-  }
-  return count
-};
 
-console.log(pairs([1,2,5,8,-4,-3,7,6,5]))
+function calc(x){
+  let total1 = x.split('').map(item => String(item.charCodeAt())).join('')
+  console.log(total1)
+  let total2 = total1.replace(total1[total1.length-1], 1)
+  console.log(total2)
+  return total1.split('').reduce((acc,c) => Number(acc) + Number(c)) - 
+          total2.split('').reduce((acc,c) => Number(acc) + Number(c))
+ }
 
+ console.log(calc('ifkhchlhfd'))
 
 
 
