@@ -303,12 +303,16 @@ function validatePIN(pin) {
 
 
 
-function dbSort(a){
-  return a.filter(item => typeof item == 'number').sort((a,b) => a - b).concat(a.filter(item => typeof item == 'string').sort())
-  }
+function getAverageAge(list) {
+  let total = 0
+  list.forEach(item => total += item.age)
+  return total/list.length
+}
 
-
-  console.log(dbSort(["Banana", "Orange", "Apple", "Mango", 0, 2, 2]))
+console.log(getAverageAge([
+  { firstName: 'Maria', lastName: 'Y.', country: 'Cyprus', continent: 'Europe', age: 30, language: 'Java' },
+  { firstName: 'Victoria', lastName: 'T.', country: 'Puerto Rico', continent: 'Americas', age: 70, language: 'Python' },
+]))
 
 
 
