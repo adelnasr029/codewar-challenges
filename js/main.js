@@ -302,11 +302,19 @@ function validatePIN(pin) {
 
 
 
-function solve(arr){
-  return arr.filter((item,index,a) => index == a.lastIndexOf(item)).reduce((acc,c) => acc + c)
-};
 
-console.log(solve([1,-1,2,-2,3,3]))
+function countLanguages(list) {
+  let count = {}
+  list.forEach(item => count[item.language] = (count[item.language] || 0) + 1)
+  return count
+}
+
+console.log(countLanguages([
+  { firstName: 'Noah', lastName: 'M.', country: 'Switzerland', continent: 'Europe', age: 19, language: 'C' },
+  { firstName: 'Anna', lastName: 'R.', country: 'Liechtenstein', continent: 'Europe', age: 52, language: 'JavaScript' },
+  { firstName: 'Ramon', lastName: 'R.', country: 'Paraguay', continent: 'Americas', age: 29, language: 'Ruby' },
+  { firstName: 'George', lastName: 'B.', country: 'England', continent: 'Europe', age: 81, language: 'C' },
+]))
 
 
 
