@@ -308,7 +308,14 @@ console.log(filterString('a1b2c3'))
 
 
 
+function solve(s){
+  let upper = s.split('').filter(item => item == item.toUpperCase())
+  let lower = s.split('').filter(item => item == item.toLowerCase())
+  return upper.length <= lower.length? s.toLowerCase() :
+    s.toUpperCase() 
+}
 
+console.log(solve('coDe'))
 
 
 
