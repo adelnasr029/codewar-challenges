@@ -300,12 +300,11 @@ function validatePIN(pin) {
 }
 
 
-var greet = function(name) {
-let newName = name.charAt(0).toUpperCase()+name.toLowerCase().slice(1)
-return `Hello ${newName}`
-};
+var filterString = function(value) {
+  return value.replace(/\D+/g, '')
+}
 
-console.log(greet('ricky'))
+console.log(filterString('a1b2c3'))
 
 
 
