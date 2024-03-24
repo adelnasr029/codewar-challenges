@@ -300,18 +300,17 @@ function validatePIN(pin) {
 }
 
 
+function isSameLanguage(list) {
+  let arr = []
+   list.forEach(item => arr.push(item.language))
+   return arr.filter((item,index,arr) => index == arr.indexOf(item) ).length == 1? true : false
+}
 
-
-
-function lastSurvivor(letters, coords) {
-  let arr = letters.split('')
-  for(let i = 0; i < coords.length; i++){
-      arr.splice(coords[i],1)
-  }
-  return arr.join('')
-  }
-  
-  console.log(lastSurvivor('kbc' , [0, 1]))
+console.log(isSameLanguage([
+  { firstName: 'Daniel', lastName: 'J.', country: 'Aruba', continent: 'Americas', age: 42, language: 'Javacript' },
+  { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 22, language: 'JavaScript' },
+  { firstName: 'Hanna', lastName: 'L.', country: 'Hungary', continent: 'Europe', age: 65, language: 'JavaScript' },
+]))
 
 
 
