@@ -303,16 +303,16 @@ function validatePIN(pin) {
 
 
 
-function getAverageAge(list) {
-  let total = 0
-  list.forEach(item => total += item.age)
-  return total/list.length
-}
+function lastSurvivor(letters, coords) {
+  let arr = letters.split('')
+  for(let i = 0; i < coords.length; i++){
+      arr.splice(coords[i],1)
+  }
+  return arr.join('')
+  }
+  
+  console.log(lastSurvivor('kbc' , [0, 1]))
 
-console.log(getAverageAge([
-  { firstName: 'Maria', lastName: 'Y.', country: 'Cyprus', continent: 'Europe', age: 30, language: 'Java' },
-  { firstName: 'Victoria', lastName: 'T.', country: 'Puerto Rico', continent: 'Americas', age: 70, language: 'Python' },
-]))
 
 
 
