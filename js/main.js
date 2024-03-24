@@ -300,17 +300,12 @@ function validatePIN(pin) {
 }
 
 
-function isSameLanguage(list) {
-  let arr = []
-   list.forEach(item => arr.push(item.language))
-   return arr.filter((item,index,arr) => index == arr.indexOf(item) ).length == 1? true : false
-}
+var greet = function(name) {
+let newName = name.charAt(0).toUpperCase()+name.toLowerCase().slice(1)
+return `Hello ${newName}`
+};
 
-console.log(isSameLanguage([
-  { firstName: 'Daniel', lastName: 'J.', country: 'Aruba', continent: 'Americas', age: 42, language: 'Javacript' },
-  { firstName: 'Kseniya', lastName: 'T.', country: 'Belarus', continent: 'Europe', age: 22, language: 'JavaScript' },
-  { firstName: 'Hanna', lastName: 'L.', country: 'Hungary', continent: 'Europe', age: 65, language: 'JavaScript' },
-]))
+console.log(greet('ricky'))
 
 
 
