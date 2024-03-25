@@ -306,15 +306,19 @@ var filterString = function(value) {
 
 
 
-function initializeNames(name){
-  let arr = name.split(' ')
-  let init = arr.slice(1,-1).map(item => item.charAt(0) + '.').join(' ')
-  console.log(init)
-  return arr.length > 2? [arr[0],init,arr[arr.length -1]].join(' ') : name
+
+function removeConsecutiveDuplicates(string) {
+  let arr = string.split(' ')
+  let result = []
+  for(let i = 0; i < arr.length; i++){
+    if(arr[i] !== arr[i+1]){
+      result.push(arr[i])
+    }
+  }
+  return result.join(' ')
 }
-
- console.log(initializeNames('Mary kjkjh Lane'))
-
+console.log(removeConsecutiveDuplicates("alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"
+))
 
 
 
