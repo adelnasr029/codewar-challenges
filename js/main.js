@@ -304,20 +304,15 @@ var filterString = function(value) {
   return value.replace(/\D+/g, '')
 }
 
-console.log(filterString('a1b2c3'))
 
 
+function solve(a,b){
+  let filteredA = a.split('')
+  let filteredB = b.split('')
+  return filteredA.filter(item => !filteredB.includes(item)).concat(filteredB.filter(item => !filteredA.includes(item))).join('')
+};
 
-function solve(s){
-  let upper = s.split('').filter(item => item == item.toUpperCase())
-  let lower = s.split('').filter(item => item == item.toLowerCase())
-  return upper.length <= lower.length? s.toLowerCase() :
-    s.toUpperCase() 
-}
-
-console.log(solve('coDe'))
-
-
+console.log(solve("xyab","xzca"))
 
  
 
