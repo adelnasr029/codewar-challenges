@@ -306,15 +306,14 @@ var filterString = function(value) {
 
 
 
-function solve(a,b){
-  let filteredA = a.split('')
-  let filteredB = b.split('')
-  return filteredA.filter(item => !filteredB.includes(item)).concat(filteredB.filter(item => !filteredA.includes(item))).join('')
-};
+function initializeNames(name){
+  let arr = name.split(' ')
+  let init = arr.slice(1,-1).map(item => item.charAt(0) + '.').join(' ')
+  console.log(init)
+  return arr.length > 2? [arr[0],init,arr[arr.length -1]].join(' ') : name
+}
 
-console.log(solve("xyab","xzca"))
-
- 
+ console.log(initializeNames('Mary kjkjh Lane'))
 
 
 
