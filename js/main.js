@@ -307,20 +307,14 @@ var filterString = function(value) {
 
 
 
-function removeConsecutiveDuplicates(string) {
-  let arr = string.split(' ')
-  let result = []
-  for(let i = 0; i < arr.length; i++){
-    if(arr[i] !== arr[i+1]){
-      result.push(arr[i])
-    }
-  }
-  return result.join(' ')
+
+function sortMyString(S) {
+    let even = S.split('').filter((item,index,arr) => index % 2 === 0).join('')
+    let odd = S.split('').filter((item,index,arr) => index % 2 !== 0).join('')
+  return `${even} ${odd}`
 }
-console.log(removeConsecutiveDuplicates("alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta"
-))
 
-
+console.log(sortMyString('CodeWars'))
 
 
 
