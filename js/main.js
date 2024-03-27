@@ -308,13 +308,18 @@ var filterString = function(value) {
 
 
 
-function sortMyString(S) {
-    let even = S.split('').filter((item,index,arr) => index % 2 === 0).join('')
-    let odd = S.split('').filter((item,index,arr) => index % 2 !== 0).join('')
-  return `${even} ${odd}`
+function sortArray(array) {
+let sorted = array.sort((a,b) => a - b)
+let joined = array.join('')
+  for(let i = 0; i < sorted.length; i++){
+    if(array[i] % 2 !== 0){
+      joined.replace(sorted[i])
+    }
+  }
+ 
 }
+console.log(sortArray([5, 8, 6, 3, 4] ))
 
-console.log(sortMyString('CodeWars'))
 
 
 
