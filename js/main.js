@@ -298,27 +298,11 @@ return `${numcharOutRange}/${sLength}`
 function validatePIN(pin) {
   return /^(\d{4}|\d{6})$/.test(pin)
 }
-
-
-var filterString = function(value) {
-  return value.replace(/\D+/g, '')
-}
+console.log(validatePIN('1756'))
 
 
 
 
-
-function sortArray(array) {
-let sorted = array.sort((a,b) => a - b)
-let joined = array.join('')
-  for(let i = 0; i < sorted.length; i++){
-    if(array[i] % 2 !== 0){
-      joined.replace(sorted[i])
-    }
-  }
- 
-}
-console.log(sortArray([5, 8, 6, 3, 4] ))
 
 
 
