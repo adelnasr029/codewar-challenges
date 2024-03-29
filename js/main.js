@@ -295,20 +295,24 @@ return `${numcharOutRange}/${sLength}`
 }
 
 
-function isSortedAndHow(a) {
-  const s = a.join``;
-  return s === a.sort((x, y) => x - y).join`` ? 'yes, ascending' :
-         s === a.sort((x, y) => y - x).join`` ? 'yes, descending' : 'no';
+//find the minimum sum obtained from summing ech 2 int product
+//P: arr of intg +ve only arr.length is even 
+//R: num representing the sum of the each 2 minimum multiplied el
+//E: 
+//P:
+function minSum(arr) {
+  //sort 
+  //reduce by summing the acc and the product of multiplying the current val by the largest val each time using arr.pop()
+  // your code here
+  return   arr.sort((a, b) => a - b).reduce((pre, val) => pre + val * arr.pop(), 0);
+
 }
 
-console.log(isSortedAndHow([15, 7, 3, -8]))
-
-
-console.log([15, 7, 3, -8] == [15, 7, 3, -8].sort((a,b) => a - b))
 
 
 
-
+console.log(minSum([12,6,10,26,3,24]))
+console.log([12,6,10,26,3,24].pop())
 
 
 
