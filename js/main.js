@@ -296,29 +296,14 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-
-
-
-
-
-//P: arr of str
-//R: new arr of containing arrs each of which consists of 2 el concat
-//:
-//P:
-
-function partlist(arr) {
-  //decalre 
-  
-  let returnArray = [];
-  for( let i = 1; i < arr.length; i++){
-   let newArray = [];
-    newArray.push(arr.slice(0,i).join(" "));
-    newArray.push(arr.slice(i).join(" "));
-    returnArray.push(newArray);
-  }
-  
-  return returnArray;
+function calculateYears(principal, interest, tax, desired) {
+let years = 0;
+while(principal < desired){
+principal += (principal * interest) * (1 - tax);
 }
+return years++
+}
+console.log(calculateYears(1000, 0.05, 0.18, 1100))
 
-console.log(partlist(["az", "toto", "picaro", "zone", "kiwi"]))
-console.log(["az", "toto", "picaro", "zone", "kiwi"].slice(4))
+
+
