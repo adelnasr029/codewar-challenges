@@ -340,9 +340,8 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function century(year) {
-  // Finish this :)
-  return Math.ceil(year/100)
-}
-
-console.log(century(2001))
+var isAnagram = function(test, original) {
+  let arr = original.toLowerCase().split('')
+  return  test.toLowerCase().split('').every(item => arr.includes(item)) 
+};
+console.log(isAnagram('dumble', 'bumble'))
