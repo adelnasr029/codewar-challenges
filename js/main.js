@@ -340,12 +340,11 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function twoSum(numbers, target) {
-  for (var i = 0; i < numbers.length-1; i++) {
-      for (var j = i+1; j < numbers.length; j++) {
-          if (numbers[i] + numbers[j] === target) return [i, j];
-      }
-  }
-}
+function findLongest(array){
+   
+   let itemLength = array.map(item => Math.max(String(item).length) )
+   return array.find(item => String(item).length == Math.max(...itemLength))
 
-console.log(twoSum([1, 2, 3], 4))
+  }
+ 
+  console.log(findLongest([222222,103032,111540,33333333]))
