@@ -9,3 +9,5 @@ var isAnagram = function(test, original) {
     //toLowercase then split then sort then comapare
     return test.toLowerCase().split('').sort().join('') == original.toLowerCase().split('').sort().join('')
   };
+
+
