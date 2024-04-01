@@ -340,11 +340,7 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function findLongest(array){
-   
-   let itemLength = array.map(item => Math.max(String(item).length) )
-   return array.find(item => String(item).length == Math.max(...itemLength))
-
-  }
- 
-  console.log(findLongest([222222,103032,111540,33333333]))
+function switcheroo(x){
+  return x.split('').map(item => item == 'a'? 'b' : item == 'b'? 'a' : item).join('')
+}
+console.log(switcheroo('aabacbaa'))
