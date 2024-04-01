@@ -340,7 +340,12 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function switcheroo(x){
-  return x.split('').map(item => item == 'a'? 'b' : item == 'b'? 'a' : item).join('')
-}
-console.log(switcheroo('aabacbaa'))
+function solve(arr){  
+  const alpha = Array.from(Array(26)).map((i,x) => x + 65)
+  const alphabets = alpha.map(item => String.fromCharCode(item))
+  let newArr = arr.map(item => item.toUpperCase())
+ return newArr.map(item =>item.split('').map((item,index) => index == alphabets.indexOf(item)? 1 : 0).reduce((acc,c) => acc + c))
+  
+  
+  };
+console.log(solve(["abode","ABc","xyzD"]))
