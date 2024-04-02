@@ -338,9 +338,16 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-function hasUniqueChars(str){
-  let arr = str.toLowerCase().split('').every((item,index,a) => typeof item == typeof a[index+1])
-return arr
+function vowel2index(str) {
+  let vowels = ['a', 'e', 'i', 'o', 'u']
+  let arr = str.toLowerCase().split('')
+  for(let i = 0; i < arr.length; i++){
+    for(let j = 0; j < vowels.length; j++){
+      arr[i] == vowels[j]? arr[i] = arr[i] = i + 1: arr[i]
+    }
+  }
+  return arr.join('')
 }
 
-console.log(hasUniqueChars("++"))
+console.log(vowel2index('this And'))
+
