@@ -338,14 +338,9 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
+function hasUniqueChars(str){
+  let arr = str.toLowerCase().split('').every((item,index,a) => typeof item == typeof a[index+1])
+return arr
+}
 
-
-function solve(arr){  
-  const alpha = Array.from(Array(26)).map((i,x) => x + 65)
-  const alphabets = alpha.map(item => String.fromCharCode(item))
-  let newArr = arr.map(item => item.toUpperCase())
- return newArr.map(item =>item.split('').map((item,index) => index == alphabets.indexOf(item)? 1 : 0).reduce((acc,c) => acc + c))
-  
-  
-  };
-console.log(solve(["abode","ABc","xyzD"]))
+console.log(hasUniqueChars("++"))
