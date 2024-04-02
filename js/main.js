@@ -338,8 +338,10 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-function explode(s) {
-  return s.split('').map(item => item.repeat(Number(item))).join('')
+function stringMerge(string1, string2, letter){
+  let newStr = string1.slice(0,string1.indexOf(letter))
+  let newStr2 = string2.slice(string2.indexOf(letter))
+  return newStr.concat(newStr2)
 }
 
-console.log(explode('102269'))
+console.log(stringMerge("hello", "world", "l"))
