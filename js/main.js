@@ -338,16 +338,8 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-function vowel2index(str) {
-  let vowels = ['a', 'e', 'i', 'o', 'u']
-  let arr = str.toLowerCase().split('')
-  for(let i = 0; i < arr.length; i++){
-    for(let j = 0; j < vowels.length; j++){
-      arr[i] == vowels[j]? arr[i] = arr[i] = i + 1: arr[i]
-    }
-  }
-  return arr.join('')
+function explode(s) {
+  return s.split('').map(item => item.repeat(Number(item))).join('')
 }
 
-console.log(vowel2index('this And'))
-
+console.log(explode('102269'))
