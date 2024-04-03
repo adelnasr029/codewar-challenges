@@ -340,10 +340,16 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function validateWord(s)
-{
-let array = s.toLowerCase().split('')
-  return array.filter((item,index,arr) => index == arr.lastIndexOf(item)) === s.array? true : s.length % array.filter((item,index,arr) => index == arr.lastIndexOf(item)).length == 0? true : false
+function calculateSpeed(distance, time) {
+  let calcDist =  Number(distance.replace(/\D+/g, ''))
+  let calcTime = Number(time.replace(/\D+/g, ''))
+  let dist = distance.includes('km')? calcDist * 0.621371 : calcDist * 0.000621371
+  let period = time.includes('min')? calcTime/60 : calcTime/(60*60)
+  console.log(calcDist)
+  console.log(calcTime)
+  console.log(dist)
+  console.log(period)
+  return ` ${Math.round(dist / period)}mph`
 }
 
-console.log(validateWord("123abc!"))
+console.log(calculateSpeed("100m", "10s"))
