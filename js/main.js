@@ -340,8 +340,10 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function swap (string) {
-  let vowels = 'aeiou'
-  return string.split('').map(item => vowels.includes(item)? item.toUpperCase() : item ).join('')
+function validateWord(s)
+{
+let array = s.toLowerCase().split('')
+  return array.filter((item,index,arr) => index == arr.lastIndexOf(item)) === s.array? true : s.length % array.filter((item,index,arr) => index == arr.lastIndexOf(item)).length == 0? true : false
 }
-console.log(swap('Sunday ab'))
+
+console.log(validateWord("123abc!"))
