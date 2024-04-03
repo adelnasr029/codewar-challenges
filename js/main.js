@@ -338,9 +338,10 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-function vowelOne(s){
-  let vowels = 'aeiou'
-  return s.split('').map(item => vowels.includes(item)? '1' : '0').join('')
-}
 
-console.log(vowelOne('aeiou, abc'))
+
+function swap (string) {
+  let vowels = 'aeiou'
+  return string.split('').map(item => vowels.includes(item)? item.toUpperCase() : item ).join('')
+}
+console.log(swap('Sunday ab'))
