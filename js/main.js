@@ -338,10 +338,9 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-function stringMerge(string1, string2, letter){
-  let newStr = string1.slice(0,string1.indexOf(letter))
-  let newStr2 = string2.slice(string2.indexOf(letter))
-  return newStr.concat(newStr2)
+function vowelOne(s){
+  let vowels = 'aeiou'
+  return s.split('').map(item => vowels.includes(item)? '1' : '0').join('')
 }
 
-console.log(stringMerge("hello", "world", "l"))
+console.log(vowelOne('aeiou, abc'))
