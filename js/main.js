@@ -340,15 +340,10 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-var sp8itInarts = function(s, partLength) {
-  let result = [];
-
-  for (var i = 0; i < s.length; i += partLength) {
-      result.push(s.slice(i, partLength + i));
-  }
-  return result.join(' ')
+function consonantCount(str) {
+  const alpha = 'a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z'.split(',').join('').split(' ').join('')
+  console.log(alpha)
+  let vowels = 'aeiou'
+   return str.toLowerCase().split('').filter((item,index,arr) => !vowels.includes(item) && alpha.includes(item) ).length
 }
-
-console.log(sp8itInarts('kfjkshfksjkf'))
-
-console.log('kj')
+console.log(consonantCount('23'))
