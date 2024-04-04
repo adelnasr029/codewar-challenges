@@ -340,16 +340,13 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function calculateSpeed(distance, time) {
-  let calcDist =  Number(distance.replace(/\D+/g, ''))
-  let calcTime = Number(time.replace(/\D+/g, ''))
-  let dist = distance.includes('km')? calcDist * 0.621371 : calcDist * 0.000621371
-  let period = time.includes('min')? calcTime/60 : calcTime/(60*60)
-  console.log(calcDist)
-  console.log(calcTime)
-  console.log(dist)
-  console.log(period)
-  return ` ${Math.round(dist / period)}mph`
-}
+function sevenAte9(str) {
+  let arr = str.split('')
+  for(let i = arr.length - 2; i >= 1; i --){
+    if(arr[i-1] === '7' && arr[i] == '9' && arr[i+1] == '7')
+       arr.splice(i,1)
+  }
+    return arr.join('')
+  }
+console.log(sevenAte9('797'))
 
-console.log(calculateSpeed("100m", "10s"))
