@@ -340,13 +340,15 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function sevenAte9(str) {
-  let arr = str.split('')
-  for(let i = arr.length - 2; i >= 1; i --){
-    if(arr[i-1] === '7' && arr[i] == '9' && arr[i+1] == '7')
-       arr.splice(i,1)
-  }
-    return arr.join('')
-  }
-console.log(sevenAte9('797'))
+var sp8itInarts = function(s, partLength) {
+  let result = [];
 
+  for (var i = 0; i < s.length; i += partLength) {
+      result.push(s.slice(i, partLength + i));
+  }
+  return result.join(' ')
+}
+
+console.log(sp8itInarts('kfjkshfksjkf'))
+
+console.log('kj')
