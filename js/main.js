@@ -340,12 +340,9 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function myLanguages(results) {
-  //apply Object.keys method the returns arr of keys name
-  //filter the key arr upon key val within the given obj if it is > 59
-  //sort descendingly
-  return Object.keys(results).filter(item => results[item] > 59)
-  // .sort((a,b) => results[b] - results[a])
-  }
+function nthSmallest(arr, pos){
+  let newArr = arr.sort((a,b) => a - b)
+  return newArr[Math.abs(pos) - 1]
+}
 
-  console.log(myLanguages({"Hindi" : 60, "Greek" : 71, "Dutch" : 93}))
+console.log(nthSmallest([15,20,7,10,4,3], 3))
