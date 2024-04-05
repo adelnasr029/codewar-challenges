@@ -340,9 +340,18 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function nthSmallest(arr, pos){
-  let newArr = arr.sort((a,b) => a - b)
-  return newArr[Math.abs(pos) - 1]
+
+function calc(x){
+  return x
+    .split('')
+    .map(c => c.charCodeAt(0))
+    .join('')
+    .split('')
+    .map(Number)
+    .filter(x => x === 7)
+    .length * 6
 }
 
-console.log(nthSmallest([15,20,7,10,4,3], 3))
+
+ console.log( calc('aaaaaddddr'))
+console.log('kdjfkdj'.split('').map(x => x.charCodeAt()))
