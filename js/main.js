@@ -340,10 +340,12 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function consonantCount(str) {
-  const alpha = 'a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z'.split(',').join('').split(' ').join('')
-  console.log(alpha)
-  let vowels = 'aeiou'
-   return str.toLowerCase().split('').filter((item,index,arr) => !vowels.includes(item) && alpha.includes(item) ).length
-}
-console.log(consonantCount('23'))
+function myLanguages(results) {
+  //apply Object.keys method the returns arr of keys name
+  //filter the key arr upon key val within the given obj if it is > 59
+  //sort descendingly
+  return Object.keys(results).filter(item => results[item] > 59)
+  // .sort((a,b) => results[b] - results[a])
+  }
+
+  console.log(myLanguages({"Hindi" : 60, "Greek" : 71, "Dutch" : 93}))
