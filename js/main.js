@@ -338,20 +338,7 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-
-
-
-function calc(x){
-  return x
-    .split('')
-    .map(c => c.charCodeAt(0))
-    .join('')
-    .split('')
-    .map(Number)
-    .filter(x => x === 7)
-    .length * 6
-}
-
-
- console.log( calc('aaaaaddddr'))
-console.log('kdjfkdj'.split('').map(x => x.charCodeAt()))
+console.log(Object.keys({tim: 'change', jim: 'accounts',
+randy: 'canteen', sandy: 'change', andy: 'change', katie: 'IS',
+laura: 'change', saajid: 'IS', alex: 'trading', john: 'accounts',
+mr: 'finance' }))
