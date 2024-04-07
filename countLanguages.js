@@ -11,6 +11,7 @@ function countLanguages(list) {
     //loop through list arr 
     let count = {}
     list.forEach(item => count[item.language] = (count[item.language] || 0) + 1)
+  
     return count
   }
   

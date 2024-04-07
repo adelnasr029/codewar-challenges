@@ -338,22 +338,8 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-//P: arr of nums tht +ve/-ve
-//R: arr of lead nums
-//E: 
-//P
-function arrayLeaders(numbers){
-  let answer = []
-  for(let i = 0; i < numbers.length; i++){
-    let sum = 0
-    for(let j = i + 1; j < numbers.length; j++){
-      sum += numbers[j]
-      console.log(sum)
-    }
-    if(numbers[i] > sum){
-      answer.push(numbers[i])
-    }
-  }
-return answer
+function switcher(x){
+const alpha = ' zyxwvutsrqponmlkjihgfedcba!? '
+return x.map(item => alpha[item]).join('')
 }
-console.log(arrayLeaders([16,17,4,3,5,2]))
+console.log(switcher(['24', '12', '23', '22', '4', '26', '9', '8']))
