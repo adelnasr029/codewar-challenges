@@ -338,9 +338,22 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-
-function explode(x){
-  const filteredArr = x.filter( foo => typeof foo === 'number')
-  return filteredArr.length ? Array(filteredArr.reduce(( a, b ) => a + b, 0)).fill(x) : 'Void!'
+//P: arr of nums tht +ve/-ve
+//R: arr of lead nums
+//E: 
+//P
+function arrayLeaders(numbers){
+  let answer = []
+  for(let i = 0; i < numbers.length; i++){
+    let sum = 0
+    for(let j = i + 1; j < numbers.length; j++){
+      sum += numbers[j]
+      console.log(sum)
+    }
+    if(numbers[i] > sum){
+      answer.push(numbers[i])
+    }
+  }
+return answer
 }
-  console.log(explode(['a', 0]))
+console.log(arrayLeaders([16,17,4,3,5,2]))
