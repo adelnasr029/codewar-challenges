@@ -342,11 +342,12 @@ return `${numcharOutRange}/${sLength}`
 
 
 
+//P: arr of 'X' tht represent busy &  "O" represent empty
+//R: 
 
 
-//P: arr of +v intg, arr size, 
-//R: arr of the same size of the given arr
-function productArray(numbers){
-  return numbers.map(item => numbers.reduce((acc,c) => acc * c) / item )
+function meeting(x){
+  return x.join('').includes("O")? x.indexOf('O') : 'None available!'
 }
-console.log(productArray([20,12, 3]))
+  console.log(meeting(['X', 'O', 'X',
+'O']))
