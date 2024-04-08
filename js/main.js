@@ -338,8 +338,15 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-function switcher(x){
-const alpha = ' zyxwvutsrqponmlkjihgfedcba!? '
-return x.map(item => alpha[item]).join('')
+
+
+
+
+
+
+//P: arr of +v intg, arr size, 
+//R: arr of the same size of the given arr
+function productArray(numbers){
+  return numbers.map(item => numbers.reduce((acc,c) => acc * c) / item )
 }
-console.log(switcher(['24', '12', '23', '22', '4', '26', '9', '8']))
+console.log(productArray([20,12, 3]))
