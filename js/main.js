@@ -340,24 +340,24 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-//P: arr of intg +/- or zeros or duplicated
-//R: max gap == max difference bt each 2 el
+//P: 2 param 1st is arr of intg of size >= 3 +ve el, migth be repeated, 2nd param is alway reeachable
+//R: num that represent how many times we added the smallest el to get sum >= 2nd parm
 //E:
 //P:
-
-function maxGap (numbers){
-  //loop though each el of the given arr to return absolute num
-  //apply reduce method the subract each 2 el
-  //then return the max val of the resulted arr
-  let result = []
-  numbers.sort((a,b) => a - b)
-for(let i = 0; i < numbers.length; i++){
-    result.push(numbers[i] - numbers[i+1])
+function minimumSteps(numbers, value){
+  //sort ascendingly
+  //delcare sum var
+  //loop through the arr and keep reassigning the sum till the condition evaluates to false then it stops
+  //return i which represetn the count of loop
   
+  
+  let arr = numbers.sort((a,b) => a - b)
+  let sum = 0
+  for(let i = 0; i < numbers.length; i++){
+    sum += arr[i]
+    if(sum >= value){
+      return i
+    }
+  }
 }
- return Math.max(...result.slice(0,-1).map(item => Math.abs(item)))
-
-}
-
-
-console.log(maxGap([13,10,2,9,5]))
+console.log(minimumSteps([8,9,10,4,2], 23))
