@@ -340,15 +340,8 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function insertDashII(num) {
-  let arr = num.toString().split('')
-  for(let i = 0; i < arr.length; i++)
-    if((arr[i] > 0 && arr[i+1] > 0 && arr[i] % 2 == 0 && arr[i+1] % 2 == 0)){
-            arr[i] += '*'
-    }else if((arr[i] % 2 > 0 && arr[i+1] % 2 > 0)){
-            arr[i] += '-'
-    }
-  return arr.join('')
+function fireFight(s){
+  return s.includes('Fire')? s.split(' ').map(item => item == 'Fire'? '~~': item).join(' ') : s
 }
 
-console.log(insertDashII(40546793)) //--> 10123-56*89-5
+console.log(fireFight('Boat Rudder Mast Boat Hull Water Fire Boat Deck Hull Fire Propeller Deck Fire Deck Boat Mast'))
