@@ -340,24 +340,22 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-//P: 2 param 1st is arr of intg of size >= 3 +ve el, migth be repeated, 2nd param is alway reeachable
-//R: num that represent how many times we added the smallest el to get sum >= 2nd parm
+//P: num
+//R: num in str format with '-' bt each 2 odd digits
 //E:
-//P:
-function minimumSteps(numbers, value){
-  //sort ascendingly
-  //delcare sum var
-  //loop through the arr and keep reassigning the sum till the condition evaluates to false then it stops
-  //return i which represetn the count of loop
-  
-  
-  let arr = numbers.sort((a,b) => a - b)
-  let sum = 0
-  for(let i = 0; i < numbers.length; i++){
-    sum += arr[i]
-    if(sum >= value){
-      return i
-    }
-  }
+//P: 
+
+
+function insertDash(num) {
+  //convert num into str
+  //split it into arr 
+  //apply reduce method with param (acc,c,index, arr)
+  return num.toString().split('').reduce((acc, c, i, arr) => {
+    if (i > 0 && Number(arr[i]) % 2 !== 0 && Number(arr[i - 1]) % 2 !== 0)
+      acc = acc + '-';
+    
+    return acc + c;
+  },'');
 }
-console.log(minimumSteps([8,9,10,4,2], 23))
+
+console.log(insertDash('151793'))
