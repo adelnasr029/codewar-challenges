@@ -340,22 +340,15 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-//P: num
-//R: num in str format with '-' bt each 2 odd digits
-//E:
-//P: 
-
-
-function insertDash(num) {
-  //convert num into str
-  //split it into arr 
-  //apply reduce method with param (acc,c,index, arr)
-  return num.toString().split('').reduce((acc, c, i, arr) => {
-    if (i > 0 && Number(arr[i]) % 2 !== 0 && Number(arr[i - 1]) % 2 !== 0)
-      acc = acc + '-';
-    
-    return acc + c;
-  },'');
+function insertDashII(num) {
+  let arr = num.toString().split('')
+  for(let i = 0; i < arr.length; i++)
+    if((arr[i] > 0 && arr[i+1] > 0 && arr[i] % 2 == 0 && arr[i+1] % 2 == 0)){
+            arr[i] += '*'
+    }else if((arr[i] % 2 > 0 && arr[i+1] % 2 > 0)){
+            arr[i] += '-'
+    }
+  return arr.join('')
 }
 
-console.log(insertDash('151793'))
+console.log(insertDashII(40546793)) //--> 10123-56*89-5
