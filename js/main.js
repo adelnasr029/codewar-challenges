@@ -333,15 +333,18 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠀⠹⣆⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣬⣥⣄⣠⣁⣤⣭⡤⠞⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣨⡗⠢⠤⢤⣤⣤⡤⠴⠚⠋⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡇⠀⠀⠹⡽⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠼⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⢦⣀⡀⠀⠀⠀⠀⠀⠀⢹⡄⠀⠀⢷⢷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣶⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-// ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣀⡁⠀⠀⠀⢦⣀⣀⡀⢳⡀⠀⠀⢿⣧⡀⠀⢀⣀⣀⣀⣠⠤⠄⠀⠀⠉⠀⠈⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+// ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣀⡁⠀⠀⠀⢦⣀⣀⡀⢳⡀⠀⠀⢿⣧⡀⠀⢀⣀⣀⣀⣠⠤⠄⠀⠀⠉⠀⠈⣧⠀⠀⠀⠀f⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠉⠙⠒⢦⣤⣠⠏⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠹⣇⣀⣀⣀⣀⣠⢤⠶⠚⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 
 
-function fireFight(s){
-  return s.includes('Fire')? s.split(' ').map(item => item == 'Fire'? '~~': item).join(' ') : s
-}
+function bingo(a) {
+  let alphabets = ' abcdefghijklmnopqrstuvwxyz'
+  let bin = 'bingo'
+  let givenWord = a.map((el,i,arr) => alphabets[el])
+  return bin.split('').every(el => givenWord.includes(el))? 'WIN' : 'LOSE'
 
-console.log(fireFight('Boat Rudder Mast Boat Hull Water Fire Boat Deck Hull Fire Propeller Deck Fire Deck Boat Mast'))
+}
+console.log(bingo([21,13,2,7,5,14,7,15,9,10]))
