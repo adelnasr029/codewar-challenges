@@ -340,26 +340,16 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-//P: arr of letters 
-//R: boolean upon specific condition 
+
+
+//P: arr of of arrays each arr contains 2 num intg & >= 0
+//: 1st num = who get on, 2nd == get off 
+//R: the num of ppl who are still in the bus after last bus stop
 //E: 
-function checkThreeAndTwo(array) {
-  let a = 0
-  let b = 0 
-  let c = 0
-  for(let i = 0; i < array.length; i++){
-    if(array[i] == 'a'){
-      a++
-    }else if(array[i] == 'b'){
-      b++
-    }else if(array[i] == 'c'){
-      c++
-    }
-  }
-  return (a === 2 || b === 2 || c == 2) && (a === 3 || b === 3 || c == 3)
- }
+//(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]),17)
+var number = function(busStops){
+ return busStops.map(item => item.reduce((acc,c) => acc - c)).reduce((acc,c) => acc + c,0)
+}
 
-
-console.log(checkThreeAndTwo(["a", "a", "a", "b", "b"] ))
-console.log(checkThreeAndTwo(["a", "b", "c", "b", "c"]))
-
+console.log(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]))
+console.log(number([[10,0],[3,5],[5,8]]))
