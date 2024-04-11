@@ -340,11 +340,26 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-function bingo(a) {
-  let alphabets = ' abcdefghijklmnopqrstuvwxyz'
-  let bin = 'bingo'
-  let givenWord = a.map((el,i,arr) => alphabets[el])
-  return bin.split('').every(el => givenWord.includes(el))? 'WIN' : 'LOSE'
+//P: arr of letters 
+//R: boolean upon specific condition 
+//E: 
+function checkThreeAndTwo(array) {
+  let a = 0
+  let b = 0 
+  let c = 0
+  for(let i = 0; i < array.length; i++){
+    if(array[i] == 'a'){
+      a++
+    }else if(array[i] == 'b'){
+      b++
+    }else if(array[i] == 'c'){
+      c++
+    }
+  }
+  return (a === 2 || b === 2 || c == 2) && (a === 3 || b === 3 || c == 3)
+ }
 
-}
-console.log(bingo([21,13,2,7,5,14,7,15,9,10]))
+
+console.log(checkThreeAndTwo(["a", "a", "a", "b", "b"] ))
+console.log(checkThreeAndTwo(["a", "b", "c", "b", "c"]))
+
