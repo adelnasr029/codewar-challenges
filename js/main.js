@@ -342,14 +342,11 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-//P: arr of of arrays each arr contains 2 num intg & >= 0
-//: 1st num = who get on, 2nd == get off 
-//R: the num of ppl who are still in the bus after last bus stop
-//E: 
-//(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]),17)
-var number = function(busStops){
- return busStops.map(item => item.reduce((acc,c) => acc - c)).reduce((acc,c) => acc + c,0)
+function crap(x, bags, cap){
+  //declare a var and assign it a value of reduced arr
+  var yard = x.reduce( (a, b) => a.concat(b) );
+  return yard.includes('D') ? 'Dog!!' : bags * cap - yard.filter( val => val === '@' ).length > 0 ? 'Clean' : 'Cr@p';
 }
 
-console.log(number([[3,0],[9,1],[4,10],[12,2],[6,1],[7,10]]))
-console.log(number([[10,0],[3,5],[5,8]]))
+console.log(crap([["_","_","_","_","_"],["_","_","@","_","_"],["@","_","_","_","_"]], 1, 2))
+
