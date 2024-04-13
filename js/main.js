@@ -338,15 +338,22 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
+//P: 3 param a = 1st el, d = difference, n == how many times we repeat
+//R: num in the str format representing the result of loop
+//E: 
+//P:
 
 
-
-
-function crap(x, bags, cap){
-  //declare a var and assign it a value of reduced arr
-  var yard = x.reduce( (a, b) => a.concat(b) );
-  return yard.includes('D') ? 'Dog!!' : bags * cap - yard.filter( val => val === '@' ).length > 0 ? 'Clean' : 'Cr@p';
+function arithmeticSequenceElements(a, d, n) {
+  // declare a var of []
+  //loop
+  let arr = [a]
+  let num = a
+	for(let i = 1; i < n; i++){
+  arr.push(num += d)
+  }
+  return arr.join(', ')
 }
 
-console.log(crap([["_","_","_","_","_"],["_","_","@","_","_"],["@","_","_","_","_"]], 1, 2))
 
+console.log(arithmeticSequenceElements(1, 2, 5))
