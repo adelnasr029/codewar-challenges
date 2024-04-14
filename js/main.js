@@ -338,22 +338,15 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-//P: 3 param a = 1st el, d = difference, n == how many times we repeat
-//R: num in the str format representing the result of loop
+//P: arr of num 
+//R: num that respresent how many occurences of the most repeated num
 //E: 
 //P:
 
+function stantonMeasure(array){  
+  const count = array.filter(num=>num === 1).length;
+  const stanton = array.filter(num=>num === count).length;
 
-function arithmeticSequenceElements(a, d, n) {
-  // declare a var of []
-  //loop
-  let arr = [a]
-  let num = a
-	for(let i = 1; i < n; i++){
-  arr.push(num += d)
-  }
-  return arr.join(', ')
+  return stanton;
 }
-
-
-console.log(arithmeticSequenceElements(1, 2, 5))
+console.log(stantonMeasure([1, 4, 3, 2, 1, 2, 3, 2]))
