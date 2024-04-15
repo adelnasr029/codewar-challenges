@@ -338,17 +338,14 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-
-//P: 3 param, n the size of the arr the other 2 params
-//R: arr of alternating values of the 2nd and 3rd params
+//P: num in the str format
+//R: boolean upon a certain condition( if the passed num is divible by 3)
 //E:
 //P:
-function alternate(n, firstValue, secondValue){
-  let arr = []
-  for(let i = 0; i < n; i++){
-    i % 2 == 0? arr.push(firstValue) : arr.push(secondValue)
-  }
-  return arr
+function divisibleByThree(str){
+  //split the str of num into individual nums 
+  //map through each item converting each num str into num type
+  //reduce the the nums of the new arr by summing their elemeents
+  //then check if the reduce num % 3 == 0 or not returning true or fale
+return str.split('').map(item => Number(item)).reduce((acc,c) => acc + c,0)%3 == 0 ? true : false
 }
-
-console.log(alternate(5, true, false))
