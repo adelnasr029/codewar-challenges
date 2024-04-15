@@ -339,17 +339,16 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 
-var flatten = function (array){
+//P: 3 param, n the size of the arr the other 2 params
+//R: arr of alternating values of the 2nd and 3rd params
+//E:
+//P:
+function alternate(n, firstValue, secondValue){
   let arr = []
-   
-  if(array.every(item => Array.isArray(item))){
-    array.forEach(item =>  arr.push(...item))
-  }else{
-   return  array
+  for(let i = 0; i < n; i++){
+    i % 2 == 0? arr.push(firstValue) : arr.push(secondValue)
   }
   return arr
 }
 
-console.log(flatten([[1, 2, 3], ["a", "b", "c"], [1, 2, 3]]))
-
-console.log(flatten([1, 2, 3]))
+console.log(alternate(5, true, false))
