@@ -339,25 +339,23 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 
-//P: 2 params the 1st is arr of nums & 2nd is num
-//R: arr of indices of some el of the given arr
-//E: arr = [3,2,4] --> [1,2]
+//P: arr of nums || empty
+//R: true or false upon condition every el = n + 1 || n -1
+//E: 
 //P:
 
-function firstSum(array,target){
-  //declare a var and assign an empty arr to it
-  //loop through the given array
-  // conditional 
-  //then push the the indices of the the el of the given array that their sum is equal to the target arg
-  //return the resulted arr
-  let arr = []
-  for(let i = 0; i < array.length; i++){
 
-    if((array[i] + array[i+1]) == target){
-       arr.push(i,i+1)
-    }
+function isNice(arr){
+
+  //loop 
+  //make comparison
+let counter = 0
+for(let i = 0; i < arr.length; i++){
+  if(arr.includes(arr[i] + 1) || arr.includes(arr[i] -1)){
+counter++
   }
-  return arr
+}
+return  counter == arr.length && arr.length != 0 ? true : false
 }
 
-console.log(firstSum([7,2,4,11,16], 9))
+console.log(isNice([]))
