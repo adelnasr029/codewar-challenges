@@ -338,17 +338,22 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-//P: arr of intg nums
-//R: arr without duplicated el
-//E:
+//P: arr of objects
+//R: object tht includes count of food options selected 
+//E: { vegetarian: 2, standard: 1, vegan: 1 }
 //P:
+function orderFood(list) {
+  //delcare var of {}
+  //loop 
 
-function findDup( arr ){
-//valid or not upon condition of there's no missing num in bt
-//if true return the duplicated val if not return 
-   return Number(arr.sort((a,b) => a- b).filter((x,i) => i !== arr.lastIndexOf(x)).join(''))
-
+let orders ={}
+  list.forEach( item => {
+    if(orders[item.meal]){
+      orders[item.meal]++
+    }
+    else{
+      orders[item.meal]  = 1
+    }
+  })
+  return orders
 }
-console.log(findDup([1,3,2,5,4,5,7,6]))
-
-console.log('cda'.split('').sort())
