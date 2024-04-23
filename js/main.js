@@ -339,21 +339,55 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 //P: arr of objects
-//R: object tht includes count of food options selected 
-//E: { vegetarian: 2, standard: 1, vegan: 1 }
+//R: object of propterties that holds arr or {}
+//E:
 //P:
-function orderFood(list) {
-  //delcare var of {}
-  //loop 
-
-let orders ={}
-  list.forEach( item => {
-    if(orders[item.meal]){
-      orders[item.meal]++
-    }
-    else{
-      orders[item.meal]  = 1
-    }
-  })
-  return orders
+let listee = [{
+  username: 'David',
+  status: 'online',
+  lastActivity: 10
+}, {
+  username: 'Lucy', 
+  status: 'offline',
+  lastActivity: 22
+}, {
+  username: 'Bob', 
+  status: 'online',
+  lastActivity: 104
+},
+{
+  username: 'Lucy', 
+  status: 'offline',
+  lastActivity: 22
 }
+]
+const whosOnline = (friends) => {
+  //delcare a var of {} with 3 properties
+  //loop through the given arr using for of loop 
+  //reassign the declared obj prop upon the conditional
+  //return the value of the reassigned obj prop
+  let result = {
+    online: [],
+    offline: [], 
+    away: []
+  }
+  
+  for(let friend of friends){
+    if(friend.status === 'offline'){
+      result.offline.push(friend.username)
+    }else if(friend.status == 'online' && friend.lastActivity > 10){
+      result.away.push(friend.username)
+    }else{
+      result.online.push(friend.username)
+    }
+  }
+  return result
+}
+/* 
+  for(const guests in status) {
+    if(status[guests].length === 0) {
+      delete status[guests];
+    }
+  }
+ */
+console.log(whosOnline(listee))
