@@ -6,7 +6,7 @@
 function solve(arr){
 
     //looop return [rest param.sort()map]
-    return Array(arr.sort((a, b) => a - b).length)
+    return [...Array(arr.sort((a, b) => a - b).length)].map((_, idx) => idx % 2 ? arr.shift() : arr.pop());
   
   };
   

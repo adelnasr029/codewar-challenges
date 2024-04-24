@@ -340,11 +340,5 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-
-function solve(arr){
-
-  //looop return [rest param.sort()map]
-  return Array(arr.sort((a, b) => a - b).length)
-};
-
-console.log(solve([15,11,10,7,12]))
+const arrCheck = value => { return value.every(item => Array.isArray(item)) }
+console.log(arrCheck([[1],[2]]))
