@@ -338,15 +338,18 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-//P: arr of num or str of nums which may be duplicate
-//R: arr of those duplicate nums if found in same order 
-//E: [1, 2, 4, 4, 3, 3, 1, 5, 3, "5"]  ==>  [4, 3, 1]
-//P:
-function duplicates(arr) {
-  //loop 
-  //filter to return the duplicate el
-  //then filter again to remove duplicated value from the returned arr of duplicates that's in case if el found the given arr > 2 times
-  return arr.filter((item,index) => index !== arr.indexOf(item)).filter((item,index,a) => index == a.indexOf(item))
+//P: str of words 
+//R: index of missed vowel 
+//E: "John Doe hs seven red pples under his bsket"          =>  0  ; missing: "a"
+//P
+//declare a var that holds a str of vowesl with alphabetic order 
+//split the given str into arr of words
+//filter the 
+
+function absentVowel(x){
+  const vowels = 'aeiou'
+   let exVo = x.split(' ').join('').split('').filter((item,index,arr) => vowels.includes(item)).join('')
+  return vowels.indexOf(vowels.split('').filter(item => !exVo.includes(item)).join(''))
 }
 
-console.log(duplicates([1, 2, 4, 4, 3, 3, 1, 5, 3, "5"]))
+console.log(absentVowel("John Doe hs seven red pples under his bsket"  ))
