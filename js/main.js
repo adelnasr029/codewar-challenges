@@ -338,18 +338,19 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-//P: str of words 
-//R: index of missed vowel 
-//E: "John Doe hs seven red pples under his bsket"          =>  0  ; missing: "a"
-//P
-//declare a var that holds a str of vowesl with alphabetic order 
-//split the given str into arr of words
-//filter the 
-
-function absentVowel(x){
-  const vowels = 'aeiou'
-   let exVo = x.split(' ').join('').split('').filter((item,index,arr) => vowels.includes(item)).join('')
-  return vowels.indexOf(vowels.split('').filter(item => !exVo.includes(item)).join(''))
+//P: +ve intg N
+//R: from 1 to N in the for [] ascending order 
+//E: extraPerfect(3)  ==>  return {1,3}
+//P:
+function extraPerfect(n){
+  let num = 1;
+  let result = []
+  for(let i = num; i <= n; i++){
+    if( i % 2 !== 0){
+      result.push(i)
+    }
+  }
+  return result
 }
 
-console.log(absentVowel("John Doe hs seven red pples under his bsket"  ))
+console.log(extraPerfect(28))
