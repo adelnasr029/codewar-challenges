@@ -338,19 +338,30 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-//P: +ve intg N
-//R: from 1 to N in the for [] ascending order 
-//E: extraPerfect(3)  ==>  return {1,3}
+//P: str of letters&length > 0
+//R: another str by moving each letter by 10 position
+//E: "testcase") -->"docdmkco"
 //P:
-function extraPerfect(n){
-  let num = 1;
-  let result = []
-  for(let i = num; i <= n; i++){
-    if( i % 2 !== 0){
-      result.push(i)
+function moveTen(s){
+  //loop through the given str
+  //conditional based on the charCodeAt method
+  //then return the str based on the condition
+ 
+  let ans = ''
+  for(let i = 0; i < s.length; ++i){
+    if(s[i].charCodeAt() + 10 > 'z'.charCodeAt()){
+      ans += String.fromCharCode(s[i].charCodeAt() - 16)
+    }else{
+      ans += String.fromCharCode(s[i].charCodeAt() + 10)
     }
   }
-  return result
+  return ans
 }
 
-console.log(extraPerfect(28))
+console.log(moveTen("p"))
+
+const alpha = Array.from(Array(26)).map((e,i) => i + 65)
+const alphabet = alpha.map(x => String.fromCharCode(x))
+console.log(alpha)
+
+console.log(alphabet)
