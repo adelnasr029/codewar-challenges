@@ -3,7 +3,7 @@ return s.map(item => {
   return {[item]: String.fromCharCode(item)}
 })
 }
-P: arr of nums
+//P: arr of nums
 //R: arr of objects of num prop in form of str and letter corresponds to the numv
 //E: 
 //P:
