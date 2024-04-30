@@ -339,15 +339,18 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 
-//
-
-function gordon(a){
-  // delcare a var that holds a val of eiou
-  //split the give str into arr of arr 
-  //loop through each el adding !!!! to it and converting a/A into @ and vowel into *
-  let vowel = 'aeiou'
-  let arr = a.toLowerCase().split('')
-   return arr.map( el => el == 'a'?'@': vowel.includes(el)? "*" : el ).join('').toUpperCase().split(' ').map(item => item + '!!!!').join(' ')
+function dominator(arr) {
+  //sort 
+  //loop through the arr
+  //conditional 
+  let dominator = 0
+  arr.sort((a,b) => a - b)
+ for(let i = 0; i < arr.length; i++){
+  if(arr[i] == arr[i+1]){
+    dominator++
+  }
+ }
+ return dominator
 }
 
-console.log(gordon('What feck damn cake'))
+console.log(dominator([3,4,3,4,2,3,1,3,3]))
