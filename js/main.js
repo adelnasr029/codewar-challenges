@@ -339,18 +339,9 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 
-function dominator(arr) {
-  //sort 
-  //loop through the arr
-  //conditional 
-  let dominator = 0
-  arr.sort((a,b) => a - b)
- for(let i = 0; i < arr.length; i++){
-  if(arr[i] == arr[i+1]){
-    dominator++
-  }
- }
- return dominator
+function sumDigits(number) {
+  return Math.abs(number).toString().split('').reduce((acc,c) => Number(acc) + Number(c),0)
 }
+console.log(sumDigits(-5556))
 
-console.log(dominator([3,4,3,4,2,3,1,3,3]))
+console.log(String(-5).length)
