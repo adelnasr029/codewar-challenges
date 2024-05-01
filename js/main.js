@@ -339,9 +339,15 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
 
-function sumDigits(number) {
-  return Math.abs(number).toString().split('').reduce((acc,c) => Number(acc) + Number(c),0)
+function isFlush(cards) {
+  //P: arr of 5str
+  //R: boolean
+  //E: 
+  //P:
+  //loop using every method 
+  return cards.every(a=>cards[0].slice(-1)===a.slice(-1))
 }
-console.log(sumDigits(-5556))
 
-console.log(String(-5).length)
+console.log(isFlush([  "QD", "4D", "10D", "KD", "5D" ]))
+
+console.log('55445'.lastIndexOf('5'))
