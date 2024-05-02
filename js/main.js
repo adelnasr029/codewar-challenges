@@ -338,16 +338,21 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
+//P: arr of arrays of str of 'good' || 'bad' sub arr not the same length all inputs maybe not be str
+//R: certain str upon certain condition 'Publish' ||  'I smell a series!' || 'Fail'
+//E: 
+//P: 
 
-function isFlush(cards) {
-  //P: arr of 5str
-  //R: boolean
-  //E: 
-  //P:
-  //loop using every method 
-  return cards.every(a=>cards[0].slice(-1)===a.slice(-1))
+
+function well(x){
+  //declare a var of count
+  //loop through the parent arr then loop through the given arr
+  //conditional to reassign var
+  let countGood = 0
+  for(let i = 0; i < x.length; i++){
+        x[i].map(item => typeof item == 'string'? item.toLowerCase() : 0).map( item => item == 'good'? countGood += 1 : countGood)
+  }
+  return countGood == 1 || countGood ==2? 'Publish!' : countGood > 2 ? 'I smell a series!' : 'Fail!'
 }
 
-console.log(isFlush([  "QD", "4D", "10D", "KD", "5D" ]))
-
-console.log('55445'.lastIndexOf('5'))
+console.log(well([['bad', 'bAd', 'bad'], ['bad', 'bAd', 'bad'], ['bad', 'bAd', 'bad']]))

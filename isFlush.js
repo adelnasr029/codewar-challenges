@@ -11,3 +11,4 @@ function isFlush(cards) {
   console.log(isFlush([  "QD", "4D", "10D", "KD", "5D" ]))
   
   console.log('55445'.lastIndexOf('5'))
+  console.log('kjfdkj'.slice(-1))
