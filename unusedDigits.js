@@ -8,4 +8,3 @@ const unusedDigits = (...arr) => {
 
 console.log(unusedDigits([12, 34, 56, 78]))
 
-console.log([12, 34, 56, 78].join())
