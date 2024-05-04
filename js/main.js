@@ -338,3 +338,32 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
+
+//dominant is the el that is greater than all elements to its right
+//P: arr of of nums 
+//R: arr of nums tht represent dominant el
+//E: solve([1,21,4,7,5]) = [21,7,5]
+//P:
+function solve(arr) {
+  // TODO
+  //declare a var of []
+  //loop through the given arr and push every tht corresponds with a certain condition
+
+
+}
+
+console.log(solve([92,52,93,31,89,87,77,105]))
+
+function mergeArrays(a, b) {
+  let arr = a.concat(b)
+  let result = []
+  for(let i = 0; i < arr.length; i++ ){
+    result.push(a[i],b[i])
+  }
+  return result.filter(el => el !== undefined)
+}
+
+
+
+
+console.log(mergeArrays([1, 2, 3, 4, 5, 6, 7, 8], ['a', 'b', 'c', 'd', 'e']))
