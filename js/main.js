@@ -338,16 +338,19 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-//P: arr of nums&number 
-//R: return the index || -1
-//E: leastLarger( [4, 1, 3, 5, 6], 0 )  =>  3
+//P: 3params 1st is a str, 2nd&3rd are intger 
+//R: str
+//E: 
 //P:
 
+function modifyMultiply (str,loc,num) {
+  //split the str 
+  //filter it 
+  //then join 
+  //map adding '-' to the filtered elelment
+  //repeat it based on the num param
+  //slice excluding the last char
+  return str.split(' ').filter((el,x)=> x == loc).map(item => item + '-').join('').repeat(num).slice(-0,-1)
+  } 
 
-function leastLarger(a,i) {
-//conditional 
-//return the index of the smallest No that's > a[i]
-return a.indexOf(Math.min(...a.filter(el => el > a[i])))
-}
-
-console.log(leastLarger([4, 1, 3, 5, 6], 0))
+  console.log(modifyMultiply("This is a string",3 ,5))
