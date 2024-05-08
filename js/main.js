@@ -338,19 +338,15 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-//P: 3params 1st is a str, 2nd&3rd are intger 
-//R: str
-//E: 
+//P: str of letters 
+//R: arr of letters beginning from the index 1 of all even char == odd index || "invalid string" if the given str length is < 2 || > 100
+//E: "abcdefghijklm" --> ["b", "d", "f", "h", "j", "l"]
 //P:
-
-function modifyMultiply (str,loc,num) {
-  //split the str 
-  //filter it 
-  //then join 
-  //map adding '-' to the filtered elelment
-  //repeat it based on the num param
-  //slice excluding the last char
-  return str.split(' ').filter((el,x)=> x == loc).map(item => item + '-').join('').repeat(num).slice(-0,-1)
-  } 
-
-  console.log(modifyMultiply("This is a string",3 ,5))
+function evenChars(string) {
+  //conditionals 
+  //then split
+  //then filter upon a certain condition
+  return string.length < 2 || string.length > 100 ? "invalid string" : 
+  string.split('').filter((el,index) => index % 2 != 0)
+  }
+console.log(evenChars("a"))
