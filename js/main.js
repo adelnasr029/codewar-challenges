@@ -338,15 +338,13 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-//P: arr of intger nums
-//R: arr of nums that appear even number of times
-//E: oddOnesOut([1, 2, 3, 1, 3, 3]) = [1, 1]
-//P: 
-function oddOnesOut(nums) {
-  //loop through nums arr
-  //find how many times the el apears 
-  //then filter and return only nums that appears for even numbers of times
-  return nums.filter(val => !(nums.filter(v => v === val).length % 2));
+//P: 2 params arr of nums and limit which  is a number
+//R: boolean based on tht all the nums inside the arr are <= limit
+//E:smallEnough([66, 101], 200), true
+//P:
+function smallEnough(a, limit){
+  //get the max num of the arr then compare it if it is <= to the limit
+return Math.max(...a) <= limit
 }
 
-console.log(oddOnesOut([1, 2, 3, 1, 3, 3]))
+console.log(smallEnough([101, 45, 75, 105, 99, 107], 107))
