@@ -338,15 +338,18 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
+//  let alphabets = 'A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z'.split(', ').join('').toLowerCase()
 
-//P: 2 arr of str 
-//R: if both arrs are [] return -1 || num 
-//E: 
-//P: 
 
-function mxdiflg(a1, a2) {
-  const maxx = (x) => x.map(el => el.length)
-  return a1.length === 0 || a2.length === 0 ? -1 : Math.max( Math.max(...maxx(a1)) - Math.min(...maxx(a2)), Math.max(...maxx(a2)) - Math.min(...maxx(a1)) )
+//P: 3 params s=str, val=her happiness level at the time of asking
+//R: "Sabbatical! Boom!" if sum of the 3params is > 22 otherwise return 'Back to your desk, boy.'
+//E: ('Can I have a sabbatical?', 5, 5), 'Sabbatical! Boom!'
+//P:
+
+function sabb(s, val, happiness){
+let lettersNum = s.toLowerCase().split(' ').join('').split('').filter(el=> 'sabbatical'.includes(el)).length
+let sum = lettersNum + val + happiness
+return sum > 22 ? 'Sabbatical! Boom!' : 'Back to your desk, boy.'
 }
 
-console.log(mxdiflg(["hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"], ["cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"]))
+console.log(sabb('Can I have a sabbatical?', 5, 5))
