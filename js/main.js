@@ -342,16 +342,15 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-//P: str, only letters, & spaces with exactly 1 space bt words & No leading or trailing
-//R: str of the 1st char of each word within the passed str
-//E: "This Is A Test" ==> "TIAT"
-//P:
+//P: str of words separated by space 
+//R: longest word withing the given str or if there're many return the rightmost longest one 
+//E:"red white blue"  =>  "white"
+//P
+function longestWord(stringOfWords) {
+  //split by space
+  //loop filtering upon returning the longest stringes from rightmost if there'se many using reduceRight method upon condition 
 
-function makeString(s){
-  // split the given string by spaces getting an arr of words
-  //loop through the resulted arr return the 1st char of each el by using el[0]
-  //join the resulted arr of the letters which represent the first char of each word 
-  return s.split(' ').map((el,i) => el[0]).join('')
+return stringOfWords.split(' ').reduceRight((acc,c) => c.length > acc.length? c : acc)
 }
 
-console.log(makeString("This Is A Test"))
+console.log(longestWord("red white blue" ))
