@@ -341,16 +341,16 @@ return `${numcharOutRange}/${sLength}`
 //  let alphabets = 'A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z'.split(', ').join('').toLowerCase()
 
 
-
-//P: str of words separated by space 
-//R: longest word withing the given str or if there're many return the rightmost longest one 
-//E:"red white blue"  =>  "white"
-//P
-function longestWord(stringOfWords) {
-  //split by space
-  //loop filtering upon returning the longest stringes from rightmost if there'se many using reduceRight method upon condition 
-
-return stringOfWords.split(' ').reduceRight((acc,c) => c.length > acc.length? c : acc)
+//P: 3params 1st str in lowerCase, 2nd&3rd letter
+//R: boolean if all occurences of a given letter always immediately followed by other given letter
+//E: ("he headed to the store", "h", "e") ➞ True
+//P:
+function bestFriend(txt, a, b) {
+  //split the given txt by spaces
+  //loop  to return the word that includes the letter of the 2nd param
+for(let i = 0; i < txt.length; i++){
+  if(txt[i] ===a && txt[i+1] !==b)return false
 }
-
-console.log(longestWord("red white blue" ))
+return true
+}
+console.log(bestFriend('a test', 't', 'e'))
