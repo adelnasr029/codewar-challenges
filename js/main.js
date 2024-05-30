@@ -338,16 +338,24 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-//P: str of letters and nums
-//R: str of just letters reversed comparing to the order of the given str
-//E: str = "krishan", the output should be "nahsirk"
+//P: 2 params which are nums
+//R: num which is divisble by the 1st arg and < the 2nd arg and > 0
+//E: divisor = 37, bound = 200 ==> return (185)
 //P:
 
-
-function reverseLetter(str) {  
-  let alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'].join('')
-
-  return str.split('').filter(el => alphabets.includes(el)).reverse().join('')
+function maxMultiple(divisor, bound){
+  // N is div by divisor
+  // N is <= bound
+  // N is > 0
+  //loop 
+  //conditional
+  let result = []
+  for(let i = divisor; i <= bound; i++){
+    if(i % divisor == 0 && i > 0){
+      result.push(i)
+    }
+  }
+  return result[result.length - 1]
 }
 
-console.log(reverseLetter("ultr53o?n"))
+console.log(maxMultiple(37,200))
