@@ -354,16 +354,14 @@ return charCountObj
 console.log(orderedCount("abracadabra"))
 
 
-function covfefe(str){
-  //P: str
-  //R: covfefe replace any occurence of coverage or if it's not found add covfefe to the given str
+function solution(pairs){
+  //P: obj 
+  //R: str from the key val pairs of the object
   //E:
-  //P: check if input contains "coverage" and if it's true replace it with covfefe
-  //otherwise add covfefe to the given str
-  //conditional using include method then returning upon the eval of the condition
-  
-return str.includes('coverage') ? str.split(' ').map(el => el.replace('coverage', 'covfefe')).join(' ') : `${str}covfefe`
-  
+  //P:
+  //use static method of Object.entries on the given object
+  //will return an arr of arrs of key value pairs then joining evey sub arr
+  return Object.entries(pairs).map(el => el.join(' = ')).join(',')
 }
 
-console.log(covfefe("coverage coverage"))
+console.log(solution({a: 1, b: '2'}))
