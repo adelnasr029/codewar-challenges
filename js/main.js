@@ -338,18 +338,19 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-//P: arr of intg
-//R: return true if it is ordered ascendingly otherwise false
-//E: inAscOrder([1,2,4,7,19]); // returns true
+['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+//P: str lowercase and never ''
+//R: num that represent the calculation of word letters based off the sum of their alphabet position
+//E: If　a = 1, b = 2, c = 3 ... z = 26
 //P:
-function inAscOrder(arr) {
-  //loop 
-  //conditional
-  for(let i = 0; i < arr.length ; i++) {
-    if (arr[i] > arr[i+1]) {
-      return false; 
-    }
-  }
-  return true;
+function wordsToMarks(string){
+  //declare var that holds val of alphabets
+  //split the string 
+  //loop through resulted arr and calculate their value based on their index +1
+  //reduce returning the sum of their corresponding positino
+  let alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  return string.split('').map(el => alphabets.indexOf(el) + 1).reduce((acc,c) => acc + c, 0)
 }
-console.log(inAscOrder([1,60,10,18]))
+
+console.log(wordsToMarks('love'))
