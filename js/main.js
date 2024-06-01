@@ -354,14 +354,33 @@ return charCountObj
 console.log(orderedCount("abracadabra"))
 
 
-function solution(pairs){
-  //P: obj 
-  //R: str from the key val pairs of the object
-  //E:
-  //P:
-  //use static method of Object.entries on the given object
-  //will return an arr of arrs of key value pairs then joining evey sub arr
-  return Object.entries(pairs).map(el => el.join(' = ')).join(',')
-}
+//P: str
+//R: Str that shows how many each letter withen the given str appears using asterisks, no dashes, spaces apostrophes, different leters spearated by ","
+//E: "Chicago"  -->  "c:**,h:*,i:*,a:*,g:*,o:*"
+//P:
+function getStrings(str){
+  //declare a var of {}
+  //loop through the given str 
+  //assigning each char as a property and how many times it is found as a val
+  //apply Object.enteries method on the resulted method 
+  //then map joining the subarr
+  //then join the parent arr and split
+  let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  let alphabets = alpha.join('')
+  console.log(alphabets)
+  let result = {}
+let city = str.toLowerCase().split(' ').join('')
+  for(let i = 0; i < city.length; i++){
+    let count = 0
+    for(let j = 0; j < city.length; j++){
+      if(city[i] === city[j]){
+        count += '*'
+        result[city[i]] = count.slice(1)
+      }
+    }
 
-console.log(solution({a: 1, b: '2'}))
+  }
+  return  Object.entries(result)
+
+}
+console.log(getStrings("Las Vegas"))
