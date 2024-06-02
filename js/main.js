@@ -344,8 +344,12 @@ const orderedCount = function (text) {
   let charCountObj = {}
   let arr = text.split('')
   for(let i = 0; i < arr.length; i++){
-    if(arr[i] === arr[i]){
-      charCountObj[arr[i]] =1
+    let count = 0
+    for(let j = 0; j < text.length; j++){
+      if(arr[i] === arr[j]){
+        count++
+        charCountObj[arr[i]] = count
+      }
     }
   }
 return charCountObj  
@@ -354,33 +358,15 @@ return charCountObj
 console.log(orderedCount("abracadabra"))
 
 
-//P: str
-//R: Str that shows how many each letter withen the given str appears using asterisks, no dashes, spaces apostrophes, different leters spearated by ","
-//E: "Chicago"  -->  "c:**,h:*,i:*,a:*,g:*,o:*"
+//P: 4 params 1st 2 for the code 2nd 2 for date
+//R: true or false if the 2 codes matches and date of the day not after the exp
+//E: checkCoupon("123", "123", "July 9, 2015", "July 9, 2015")  ===  true
 //P:
-function getStrings(str){
-  //declare a var of {}
-  //loop through the given str 
-  //assigning each char as a property and how many times it is found as a val
-  //apply Object.enteries method on the resulted method 
-  //then map joining the subarr
-  //then join the parent arr and split
-  let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-  let alphabets = alpha.join('')
-  console.log(alphabets)
-  let result = {}
-let city = str.toLowerCase().split(' ').join('')
-  for(let i = 0; i < city.length; i++){
-    let count = 0
-    for(let j = 0; j < city.length; j++){
-      if(city[i] === city[j]){
-        count += '*'
-        result[city[i]] = count.slice(1)
-      }
-    }
 
-  }
-  return  Object.entries(result)
-
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+  //conditionals first for matching the enterecode with correct one
+  //apply Date.parse static method parses a string represetation of date and returns date's timestamp
+  return enteredCode === correctCode && Date.parse(expirationDate) >= Date.parse(currentDate)
 }
-console.log(getStrings("Las Vegas"))
+console.log(checkCoupon('123','123','September 5, 2014','October 1, 2014'))
+
