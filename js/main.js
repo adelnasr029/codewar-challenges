@@ -358,15 +358,3 @@ return charCountObj
 console.log(orderedCount("abracadabra"))
 
 
-//P: str / X don't count as an occurence of "x"
-//R: true or false based on if the 1s "x" is followed by "xx" otherwise false
-//E: "xoxotrololololololoxxx" → false
-//P:
-
-
-const tripleX = str => { 
-  let x = str.indexOf('xxx')
-  return x 
-}
-console.log(tripleX("rrxxx"))
-//I wanna know if the 1st occurence of "x" is followed by "xx" then we can filter returning just 
