@@ -361,15 +361,15 @@ console.log(orderedCount("abracadabra"))
 
 
 
-//P: arr of intgers 
-//R: true or false on the condition of, it the given arr contains all nums fron 0 to arr.length -1
-//E: [0,1,2,2,3] => False
+//P: a num, +ve
+//R: true if the given num is equal to power of 2, 2 is the base where n is as the exponent 
+//E: isPowerOfTwo(1024) // -> true
+//P:
 
-
-function isAllPossibilities(x){
-    //loop 
-  //conditional if the given arr contains all the number from 0 to arr.length -1
-  let arr = x.sort((a,b) => a - b)
-return arr.every((el,i) => el === i)
+function isPowerOfTwo(n){
+  //apply isInteger that takes Math.log2(n) as an arg
+  //Math.log2 static mehod returns the base 2 logarithm of n
+  return Number.isInteger(Math.log2(n));
 }
-console.log(isAllPossibilities([0,1]))
+
+console.log(isPowerOfTwo(233))
