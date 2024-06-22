@@ -13,4 +13,5 @@ function arrayMash (array1, array2) {
     return arr
   }
   
-  console.log(arrayMash([1,2,3],['a','b','c']))/
+  console.log(arrayMash([1,2,3],['a','b','c']))
+
