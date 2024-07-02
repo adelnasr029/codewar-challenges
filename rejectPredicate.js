@@ -8,3 +8,5 @@ function reject(array, predicate) {
     //by not including the the result of the passed predicaate func passing to it each el within the given array
     return array.filter(el => !predicate(el))
   }
+
+  
