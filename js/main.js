@@ -91,14 +91,9 @@ function binarySearch(arr,item){
     return -1
 }
 
-function SumSquares(l){
-    return l.reduce((acc,c) => {
-        if(Array.isArray(c)){
-            return acc + SumSquares(c)
-        } else {
-           return acc + c*c
-        }
-      }, 0)
+const shrek = () =>{
+    return 'hello world'
 }
 
-console.log(SumSquares([[1,2],3]))
+let hello = new  shrek()
+console.log(hello)
