@@ -376,3 +376,20 @@ function oddOnesOut(nums) {
 
 
 
+// arr of intgers 
+// sorted arr ascendingly each el represent the product of el * index +1
+// [ 23, 2, 3, 4, 5 ] = Output: 2, 3, 4, 23, 5
+// 
+
+function sortByValueAndIndex(array){
+  // map return sub of el and product each el * (index + 1)
+  // sort ascendingly the subarrays depending on the 2nd el withing each arr
+  // map return the 1st el within each
+  return array
+		.map((x, i) => [x, x * (i + x)])
+		.sort((a, b) => a[1] - b[1])
+    .map(el => el[0])
+	
+}
+
+console.log(sortByValueAndIndex([ 23, 2, 3, 4, 5 ]))
