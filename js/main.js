@@ -375,21 +375,10 @@ function oddOnesOut(nums) {
 // console.log(oddOnesOut([1, 1, 2, 2, 3, 3, 3]))
 
 
-
-// arr of intgers 
-// sorted arr ascendingly each el represent the product of el * index +1
-// [ 23, 2, 3, 4, 5 ] = Output: 2, 3, 4, 23, 5
-// 
-
-function sortByValueAndIndex(array){
-  // map return sub of el and product each el * (index + 1)
-  // sort ascendingly the subarrays depending on the 2nd el withing each arr
-  // map return the 1st el within each
-  return array
-		.map((x, i) => [x, x * (i + x)])
-		.sort((a, b) => a[1] - b[1])
-    .map(el => el[0])
-	
+function gauss(arr){
+  //sum of arr el
+  return arr[arr.length -1] * (arr[arr.length -1] + 1)/2
 }
 
-console.log(sortByValueAndIndex([ 23, 2, 3, 4, 5 ]))
+console.log(gauss([1,2,3]))
+
