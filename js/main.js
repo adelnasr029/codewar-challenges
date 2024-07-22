@@ -382,3 +382,21 @@ function gauss(arr){
 
 console.log(gauss([1,2,3]))
 
+console.log('abc'.charCodeAt(2))
+
+var seqlist = function(first,c,l){
+  //3 params 
+  //arr of nums
+  //
+  //declare a var of []
+  //loop to push the result of sum of counter from first + c
+  let result = []
+  
+  for(let i = first; i < l; i++){
+    let count = i + c
+    result.push(count)
+  }
+  return [first].concat(result.slice(0,result.length-1))
+}
+
+console.log(seqlist(0,1,20))
