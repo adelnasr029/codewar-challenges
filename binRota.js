@@ -11,4 +11,4 @@ function binRota(arr){
       ["Alexa",  "Amy",    "Edward"],
       ["Liz",    "Claire", "Juan"],
       ["Dee",    "Luke",   "Katie"] ]
-    ))
+    )) 
