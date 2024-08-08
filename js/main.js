@@ -382,3 +382,8 @@ function gauss(arr){
 
 console.log(gauss([1,2,3]))
 
+let a7a = [5,2,3]
+console.log(a7a.shift())
+console.log(a7a.shift())
+console.log(a7a.shift())
+console.log(a7a.shift())
