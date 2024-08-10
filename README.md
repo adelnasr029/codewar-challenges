@@ -5,9 +5,12 @@
 ## How It's Made:
 
 **Tech used:** <img src="https://img.shields.io/static/v1?label=|&message=JAVASCRIPT&color=3c7f5d&style=plastic&logo=javascript"/>
-
-Everyday, the first thing I do is solve a Codewar! 
-
+<br>
+ **Learning:**  Track my progress as I solve more complex challenges over time.
+ <br>
+ **Reference:** Serve as a resource for myself and others to reference different problem-solving techniques.
+ <br>
+ **Community Contribution:** Share solutions with the coding community, helping others learn and improve their skills.
 ## Optimizations
 
 I consistently refactor and optimize my code, sometimes for efficiency, sometimes for readability. 
