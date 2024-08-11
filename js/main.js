@@ -365,26 +365,22 @@ console.log(orderedCount("abracadabra"))
 
 
 
-// str of words 
-// return str with the highest point according to its position in the alphabet
-//a = 1, b = 2, c = 3
-
-function high(x){
-  //declare a var of alphabets
-  // split it
-  // declare a var of {}
-  //loop to reassigne it
-  let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-  let score = {}
-  let arr = x.split(' ')
-  for(let i = 0; i < arr.length; i++){
-    let count = []
-    for(let j = 0; j < arr[i].length; j++){
-      count.push(alpha.indexOf(arr[i][j]) + 1)
-    }
-    score[arr[i]] = count.reduce((acc,c) => acc + c ,0)
-  }
-return Object.entries(score).sort((a,b) => b[1] - a[1])[0][0]
+function high(s){
+  let as = s.split(' ').map(s=>[...s].reduce((a,b)=>a+b.charCodeAt(0)-96,0));
+  // return s.split(' ')[as.indexOf(Math.max(...as))];
+  return as
 }
 
-console.log(high('abs gh'))
+console.log(high('aa gh'))
+
+//P: 2 arr of str arr1 constains el which may be substr of el in arr2
+//R: sorted arr of str of arr1 which are substr of arr2
+//E: console.log(function inArray(["tarp", "mice", "bull"],["lively", "alive", "harp", "sharp", "armstrong"]) => returns []
+//P:
+function inArray(array1,array2){
+  //loop through arr1 to return el that are substr of arr2 then sort
+  let arr1 = array1.sort()
+  let arr2 = array2.join(',')
+  return arr1.filter(el => arr2.includes(el)? el : '')
+}
+console.log(inArray(["live","strong","lyal","lysh","arp"], ["lively","alive","harp","sharp","armstrong"]))
