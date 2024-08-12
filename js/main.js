@@ -397,17 +397,7 @@ function highestRank(arr){
   console.log(highestRank( [10,3,2,4,3,5,1,9,4,5,3,1,2,7,10,5,2]))
 
  
-  function wavee(str){
-    //declare a var of []
-    //loop to reassigne that var using push and slice method and join
-    let result = []
-      for(let i = 0; i < str.length; i++){
-        result.push(str.slice(0,i) + str[i].toUpperCase() + str.slice(i+1))
-      }
-      return result
-  }
+
 
     
 
-    console.log(wavee('hello'))
-console.log('hello'.slice(0,2), 'hello'[2].toUpperCase(), 'hello'.slice(3))
