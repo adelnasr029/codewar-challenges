@@ -401,34 +401,28 @@ function highestRank(arr){
 
   
 
-// str of words
-// new str of words where vowel letter is converted to a num of its corresponding index + 1 in the str of "aeiou"
-// decode("h3 th2r2") would return "hi there".
+//P: arr of subArr of nums
+//R: num which represent the the length of the missing arr
+// [[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]] --> 3
 //
 
-function encode(string) {
-  //declare a var of vowel 
-  //loop
-  //replace method that will replaced each vowel with each corresponding index in the vowel var +1
-  let vowel = 'aeiou'
-  let arr = string.split('')
-  for(let i = 0; i < arr.length; i++){
-    if( vowel.includes(arr[i])){
-      arr[i] = vowel.indexOf(arr[i]) + 1
-    }
+function getLengthOfMissingArray(arrayOfArrays) {
+  // loop through the given arr returnin each arr length
+  //loop again to return the missing num which represent the length of the missing arr
+  const lengths = (arrayOfArrays || [])
+    .map(a => a ? a.length : 0)
+    .sort((a, b) => a - b)
+  
+  if (lengths.includes(0)) {
+    return 0
   }
-  return arr.join('')
-}
-console.log(encode('How are you today?'))
 
-function decode(string) {
-  let vowel = 'aeiou'
-  let arr = string.split('')
-  for(let i = 1; i < string.length; i++){
-    if(Number(arr[i])){
-      arr[i] = vowel[Number(arr[i]) -1]
-    }
+for(let i = lengths[0]; i < Math.max(...lengths); i++){
+  if(!lengths.includes(i)){
+    return i
   }
-  return arr.join('')
 }
-console.log(decode('h2ll4'))
+
+}
+
+console.log(getLengthOfMissingArray( null))
