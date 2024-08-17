@@ -406,15 +406,23 @@ function highestRank(arr){
 // [[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]] --> 3
 //
 
-//P: arr of str
-//R: new arr of str where all consecutive duplicate letters removed from each str
-//dup(["abracadabra","allottee","assessee"]) = ["abracadabra","alote","asese"].
-//
-function dup(s) {
-//loop through the given arr 
-//then loop through each el to remove the consecutive duplicate letters 
-return s.map(el => el.split('').filter((a,i) => el[i] !== el[i+1]).join(''))
-  
-  };
 
-  console.log(dup(["abracadabra","allottee","assessee"]))
+//num
+//num which represent the count of 1 as the binary representation of input num
+//
+var countBits = function(n) {
+  // stringfy the n
+  //toString(2)
+  //declare a var of count 
+  //loop to reassign the valut of the count var bases on conditional
+  let bin = n.toString(2)
+  let count = 0
+  for(let i = 0; i < bin.length; i++){
+    if(bin[i] == "1"){
+      count++
+    }
+  }
+  return count
+};
+
+console.log(countBits(1234)) // return 5
