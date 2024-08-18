@@ -407,22 +407,19 @@ function highestRank(arr){
 //
 
 
-//num
-//num which represent the count of 1 as the binary representation of input num
+// intg
+// str where odd num is surrounded by "-" but not on the end or beginning
+// 6815 -> '68-1-5'
 //
-var countBits = function(n) {
-  // stringfy the n
-  //toString(2)
-  //declare a var of count 
-  //loop to reassign the valut of the count var bases on conditional
-  let bin = n.toString(2)
-  let count = 0
-  for(let i = 0; i < bin.length; i++){
-    if(bin[i] == "1"){
-      count++
-    }
-  }
-  return count
-};
 
-console.log(countBits(1234)) // return 5
+function dashatize(num) {
+  //declare a var that holds a value of str of the given the num
+  //loop conditional 
+  let str = `${num}`.split('').map(el => el % 2? '-' + el + '-': el)
+
+return str.join('').split('-').filter(el => el !== '').join('-')
+}
+
+console.log(dashatize(5311))
+console.log(dashatize(274))
+console.log(dashatize(86320))
