@@ -398,30 +398,15 @@ function highestRank(arr){
 
  
 
-
+// num 
+// single digit num 
+//132189  -->  1 + 3 + 2 + 1 + 8 + 9 = 24  -->  2 + 4 = 6
+//
+function digital_root(n) {
+  if (n < 10) return n;
   
-
-// arr of obj, valid, never emplty
-// arr of objects with age val the largest
-//
-var list1 = [
-  { firstName: 'Gabriel', lastName: 'X.', country: 'Monaco', continent: 'Europe', age: 49, language: 'PHP' },
-  { firstName: 'Odval', lastName: 'F.', country: 'Mongolia', continent: 'Asia', age: 38, language: 'Python' },
-  { firstName: 'Emilija', lastName: 'S.', country: 'Lithuania', continent: 'Europe', age: 19, language: 'Python' },
-  { firstName: 'Sou', lastName: 'B.', country: 'Japan', continent: 'Asia', age: 49, language: 'PHP' },
-]; 
-//
-
-
-function findSenior(list) {
-  // loop through list then loop each obj using sort according the val of age
-  let result = []
-let maxage = Math.max(...list.map(el => el.age))
-for(let key in list){
-  if(list[key].age == maxage){
-     result.push(list[key])
-  }
+return digital_root(n.toString().split('').reduce((acc,c) => acc + + c,0))
 }
-return result
-}
-console.log(findSenior(list1))
+
+console.log(digital_root(16)) // 7
+console.log(digital_root(942)) //-->  9 + 4 + 2 = 15  -->  1 + 5 = 6
