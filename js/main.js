@@ -401,21 +401,27 @@ function highestRank(arr){
 
   
 
-//P: arr of subArr of nums
-//R: num which represent the the length of the missing arr
-// [[1, 2], [4, 5, 1, 1], [1], [5, 6, 7, 8, 9]] --> 3
+// arr of obj, valid, never emplty
+// arr of objects with age val the largest
+//
+var list1 = [
+  { firstName: 'Gabriel', lastName: 'X.', country: 'Monaco', continent: 'Europe', age: 49, language: 'PHP' },
+  { firstName: 'Odval', lastName: 'F.', country: 'Mongolia', continent: 'Asia', age: 38, language: 'Python' },
+  { firstName: 'Emilija', lastName: 'S.', country: 'Lithuania', continent: 'Europe', age: 19, language: 'Python' },
+  { firstName: 'Sou', lastName: 'B.', country: 'Japan', continent: 'Asia', age: 49, language: 'PHP' },
+]; 
 //
 
 
-//P: str of words, each words contain a single num Numbers can be from 1 to 9. So 1 will be the first word (not 0).
-//R: str where each word ordered into a position according the val of the num it contains
-//"is2 Thi1s T4est 3a"  // "Thi1s is2 3a T4est"
-function order(words){
-  // split the words sptrin by ' '
-  //loop 
-  //sort
-  return words.split(' ').map(el => el + el.split('').filter(x => Number(x))).sort((a,b) => a[a.length -1] - b[b.length -1]).map(el => el.slice(0,-1)).join(' ')
-
+function findSenior(list) {
+  // loop through list then loop each obj using sort according the val of age
+  let result = []
+let maxage = Math.max(...list.map(el => el.age))
+for(let key in list){
+  if(list[key].age == maxage){
+     result.push(list[key])
+  }
 }
-
-console.log(order("is2 Thi1s T4est 3a"))
+return result
+}
+console.log(findSenior(list1))
