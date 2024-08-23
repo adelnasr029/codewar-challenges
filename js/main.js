@@ -404,20 +404,25 @@ function highestRank(arr){
 // {1,100,50,-51,1,1} // output 1
 //
 
-function findEvenIndex(arr){
-  // find
-  // loop through the arr summing the el from right == loop summing el from left 
-  let leftSum = 0
-  let rightSum = arr.reduce((acc,c) => acc + c, 0)
-  for(let i = 0; i < arr.length; i++){
-    rightSum -= arr[i]
-    if(leftSum == rightSum) return i
-    leftSum += arr[i]
+
+
+function deepCount(array){
+  // arr, [] || el || arr of arr 
+  // num which represent the num of within the given arr
+  //[1, 2, [3, 4, [5]]]  -->  7
+//declare var of []
+//loop
+//conditional to determine if the el is arr or not to concat
+//
+var count = array.length
+
+for (const element of array) {
+  if (Array.isArray(element)) {
+    count += deepCount(element)
   }
+}
+return count
+}
 
-  }
-
-
-console.log(findEvenIndex([1,2,3,4,3,2,1] ))
-console.log(findEvenIndex([1,100,50,-51,1,1] ))
+console.log(deepCount([1, 2, [3, 4, [5]]]))
 
