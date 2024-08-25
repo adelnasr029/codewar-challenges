@@ -399,11 +399,6 @@ function highestRank(arr){
  
 
 
-// arr of nums
-// num which represent the index where the sum of the el on its right === sum of the el on its left
-// {1,100,50,-51,1,1} // output 1
-//
-
 
 
 
