@@ -395,10 +395,35 @@ function highestRank(arr){
   }
 
   console.log(highestRank( [10,3,2,4,3,5,1,9,4,5,3,1,2,7,10,5,2]))
+  function findOdd(A) {
+    //arr of nums that could be odd and even
+    //return the num that it occurs for odd num of times
+    // [1,1,2] output 2
+    // declare a var of {}
+    // loop using find method applying conditional
+    let count = {}
+    A.map(el => count[el] = (count[el] + 1 || 1))
+    return A.find(el => count[el] % 2 == 1)
+    }
 
- 
+    console.log(findOdd([1,2,2,3,3,3,4,3,3,3,2,2,1]))
 
 
 
+    function sumConsecutives(s) {
+      let result = []
+
+      let  sum = 0
+      for( var i = 0; i < s.length; i++){
+        sum += s[i];
+        if(s[i] != s[i+1]){
+          result.push(sum);
+          sum = 0;
+        }
+      }
+      return result;
+  }
 
 
+console.log(sumConsecutives([1,4,4,4,0,4,3,3,1]))
+//[1,12,0,4,6,1]
