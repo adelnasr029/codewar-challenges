@@ -16,3 +16,4 @@ function sumConsecutives(s) {
 
 console.log(sumConsecutives([1,4,4,4,0,4,3,3,1]))
 //[1,12,0,4,6,1]
+
