@@ -416,19 +416,26 @@ function highestRank(arr){
       return nums.filter(val => (nums.filter(v => v === val).length % 2));
     }
     
-
-
-// arr of nums 
-// return new arr where el are sorted decreasingly according to their frequency if 2 el have the same frequency, sort them by increasing value
-// solve([2,3,5,3,7,9,5,3,7]) = [3,3,3,5,5,7,7,2,9]
+// arr of intgers that have a difference of 2
+// new arr of subArrs where each arr is formed of 2 elements the diff bt is 2
+// [1, 2, 3, 4]  should return [[1, 3], [2, 4]]
 //
 
-function solve(arr){
-  // loop through the arr using map
-  // return [el, [el == el].length ] filter
-  // sort the sub arrs decsendingly according to each one length and acsendingly on the value in case of if they have the same length
-  //
-  return arr.map(el => [el, arr.filter(val => el === val).length]).sort((a,b) => b[1] - a[1] || a[0] - b[0]).map(el => el[1])
-
-}
-console.log(solve([2,3,5,3,7,9,5,3,7]))
+    function twosDifference(input){
+      //declare a var of []
+      // loop to reassign it upon conditional 
+      //conditional if indexOf(input[i] + 2) != -1 then push
+      // input[i] and input[i] +2
+      // using push
+      // return that var
+      let arr = []
+      input.sort((a,b) => a -b)
+      for(let i = 0; i < input.length; i++){
+        if(input.indexOf(input[i] + 2) != -1){
+          arr.push([input[i], input[i] +2])
+        }
+      }
+return arr
+    }
+     console.log(twosDifference([1, 23, 3, 4, 7]))
+     console.log(twosDifference([4, 3, 1, 5, 6]))
