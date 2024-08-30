@@ -340,61 +340,7 @@ return `${numcharOutRange}/${sLength}`
 
 ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-const orderedCount = function (text) {
-  let charCountObj = {}
-  let arr = text.split('')
-  for(let i = 0; i < arr.length; i++){
-    let count = 0
-    for(let j = 0; j < text.length; j++){
-      if(arr[i] === arr[j]){
-        count++
-        charCountObj[arr[i]] = count
-      }
-    }
-  }
-return charCountObj  
-}
 
-console.log(orderedCount("abracadabra"))
-
-
-
-
-
-
-
-
-
-function high(s){
-  let as = s.split(' ').map(s=>[...s].reduce((a,b)=>a+b.charCodeAt(0)-96,0));
-  // return s.split(' ')[as.indexOf(Math.max(...as))];
-  return as
-}
-
-console.log(high('aa gh'))
-
-// arr of nums, whole, repeated
-// num which is repeated the most
-// [12, 10, 8, 12, 7, 6, 4, 10, 12, 10]          -->  12
-//
-function highestRank(arr){
-  //decalre a var of {}
-  //loop and declare a var of count = 0
-  //nested loop to reassign key val pair 
-  let obj = {}
-  for(let i = 0; i < arr.length; i++){
-    let count = 0
-    for(let j = 0; j < arr.length; j++){
-      if(arr[i] === arr[j]){
-        count++
-        obj[arr[i]] = count
-      }
-    }
-  }
-  return Object.entries(obj).sort((a,b) => b[1] - a[1])
-  }
-
-  console.log(highestRank( [10,3,2,4,3,5,1,9,4,5,3,1,2,7,10,5,2]))
   function findOdd(A) {
     //arr of nums that could be odd and even
     //return the num that it occurs for odd num of times
@@ -409,33 +355,25 @@ function highestRank(arr){
     console.log(findOdd([1,2,2,3,3,3,4,3,3,3,2,2,1]))
 
 
-    function oddOnesOut(nums) {
-      //loop through nums arr using filter
-      //find how many times the el apears by filternig repeated el
-      //then filter and return only nums that appears for even numbers of times
-      return nums.filter(val => (nums.filter(v => v === val).length % 2));
-    }
-    
-// str, 
-// object of key value pairs indicating how many times each char found in the str
-// aba => {'a': 2, 'b': 1}.
-//
-function count(string) {
-  // declare a var of {}
-  // loop 
-  // nested loop & declare a var of count = 0
-  // conditional within nested loop to reassign both obj anc count
-  let res = {}
-  for(let i = 0; i < string.length; i++){
-    let count = 0
-    for(let j = 0; j < string.length; j++){
-      if(string[i] === string[j]){
-        count++
-        res[string[i]]  = count
-      }
-    }
-  }
-  return res
-}
 
-console.log(count('aba'))
+
+    // str
+    // str of num where each num represent the position of the replaced letter in alphabet
+    //
+    function alphabetPosition(text) {
+      // delcare a var of letter
+      // declare a var res of []
+      // loop to reassign the res 
+      let alphabets = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+      let res = []
+      let tex = text.split(' ').join('').toLowerCase()
+      for(let i = 0; i < tex.length; i++){
+        if(alphabets.includes(tex[i])){
+          res.push(alphabets.indexOf(tex[i]) +1)
+        }
+      }
+
+      return res.join(' ')
+    }
+
+    console.log(alphabetPosition("The sunset sets at twelve o' clock."))
