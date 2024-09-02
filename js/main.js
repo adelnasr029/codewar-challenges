@@ -355,22 +355,6 @@ return `${numcharOutRange}/${sLength}`
     console.log(findOdd([1,2,2,3,3,3,4,3,3,3,2,2,1]))
 
 
-// num, ingt
-// arr of of el each is "*"
-//3 => [ "  *  "," *** ", "*****"]
-//
 
-function towerBuilder(nFloors) {
-  // delcare a var of []
-  // loop to reassign it 
-  let result = []
-  let el = '*'
-  for(let i = 0; i < nFloors; i++){
-    result.push(' '.repeat(nFloors - i - 1) + "*".repeat((i*2)+1) + ' '.repeat(nFloors - i - 1)) 
-  }
-  return result
-}
 
-console.log(towerBuilder(3))
 
-console.log('8'.repeat(2))
