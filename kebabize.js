@@ -14,3 +14,4 @@ function kebabize(str) {
   }
   
   console.log(kebabize('MyCamelHas0Humps'))
+  
