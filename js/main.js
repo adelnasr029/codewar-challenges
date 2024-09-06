@@ -357,14 +357,13 @@ return `${numcharOutRange}/${sLength}`
 
 
 
-//arr of words 
-// new sorted arr alpha
-//["Hello", "there", "I'm", "fine"]  -->  ["fine", "Hello", "I'm", "there"]
-//
+// arrs 
+// boolean if the passed arrs in sequence are similar. similare means the same el and the same no of occurrences
+// arraysSimilar(arr1, arr2); // Should equal true
 
-sortme = function( names ){
- return  names.sort((a,b) => a.toLowerCase().localeCompare(b.toLowerCase()))
+function arraysSimilar(arr1, arr2) {
+  let arr  = arr2.sort((a,b) => a - b)
+  return arr1.sort((a,b) => a - b).every((el,i) => el === arr[i])
 }
 
-console.log(sortme(["Hello", "there", "I'm", "fine"] ))
-console.log('dka'.split().sort())
+console.log(arraysSimilar([2, 1, 2, 4, 3], [1, 2, 2, 3, 4]))
