@@ -338,8 +338,7 @@ return `${numcharOutRange}/${sLength}`
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⣠⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠙⣏⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 // ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠤⠴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣇⢀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
 
-['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
+//abcdefghijklmnopqrstuvwxyz
 
   function findOdd(A) {
     //arr of nums that could be odd and even
@@ -355,24 +354,35 @@ return `${numcharOutRange}/${sLength}`
     console.log(findOdd([1,2,2,3,3,3,4,3,3,3,2,2,1]))
 
 
+    function findSolution(target) {
+      function find(current, history) {
+        if (current == target) {
+          return history;
+        } else if (current > target) {
+          return null;
+        } else {
+          return find(current + 5, `(${history} + 5)`) ??
+                 find(current * 3, `(${history} * 3)`);
+        }
+      }
+      return find(1, "1");
+    }
 
-
-// str, contains even || odd no of char 
-// arr of el where each el consists of 2 char, str.length % 2 !== 0? last el + '_'
-// * 'abc' =>  ['ab', 'c_']
-// 
-function solution(str){
-    // declare a var of []
-   // condtional to determine if str length is odd or even no
-   // split 
-   // loop pushing each 2 sequential chars to the []
-  let a = str.split('')
-  let arr  = a.length % 2 === 0? a : a.concat('_')
-  let result = []
-  for(let i = 0; i < arr.length; i+=2){
-    result.push(arr[i] + arr[i+1])
+    console.log(findSolution(13))
+// str of num represent yr
+// new str that represent the century
+// "1999" --> "20th"
+//
+function whatCentury(year){
+  var century = Math.ceil(year / 100);
+  if (century > 10 && century < 20) return century + "th";
+  switch (century % 10) {
+    case 1: return century + "st";
+    case 2: return century + "nd";
+    case 3: return century + "rd";
+    default: return century + "th";
   }
-  return result 
 }
 
-console.log(solution('abcdf'))
+console.log(whatCentury(2011))
+
