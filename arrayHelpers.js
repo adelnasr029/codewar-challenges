@@ -17,3 +17,4 @@ Array.prototype.square = function(){
   }
   Array.prototype.odd = function(){
     return this.filter(el => el % 2 !== 0 )
+  }
