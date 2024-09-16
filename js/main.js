@@ -383,20 +383,26 @@ return `${numcharOutRange}/${sLength}`
     
     console.log(whatCentury(2))
 
-    function createPhoneNumber(numbers){
-      // arr of 10 nums bt 0 - 9
-      // str in a specific format
-      // createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
-    // delcare a var of str that holds a str of the specific format
-      //loop 
-      // replace method to reassign that variable 
-      // return reassigned var
-      let phNo = "(xxx) xxx-xxxx"
-      for(let i = 0; i < phNo.length; i++)
-        phNo = phNo.replace('x', numbers[i])
-      return phNo
-    }
+// num, +ve, 
+// num which represent multiplicative persistence, represent how many times the num is multiplied
+// 39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit, there are 3 multiplications)
+//
 
+function persistence(num) {
+  // declare a var of count of 0
+  // stringfy the num 
+  // split 
+  //conditional to determine if the length is 1 then reutrn 0
+  // loop then convert it each num to number type
+  let count = 0;
 
-    console.log(createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
-    console.log(createPhoneNumber([1, 1, 1, 1, 1, 1, 1, 1, 1, 1]))
+  while (num >= 10) {
+      num = num.toString().split('').reduce((acc, digit) => acc * parseInt(digit), 1);
+      console.log(num)
+      count++;
+  }
+
+  return count;
+}
+
+persistence(39)// 3
