@@ -351,35 +351,7 @@ return `${numcharOutRange}/${sLength}`
     return A.find(el => count[el] % 2 == 1)
     }
 
-    console.log(findOdd([1,2,2,3,3,3,4,3,3,3,2,2,1]))
+    console.log(findOdd([1,2,2,3,3,3,3,3,4,3,3,2,2,1]))
 
 
-    function findSolution(target) {
-      function find(current, history) {
-        if (current == target) {
-          return history;
-        } else if (current > target) {
-          return null;
-        } else {
-          return find(current + 5, `(${history} + 5)`) ??
-                 find(current * 3, `(${history} * 3)`);
-        }
-      }
-      return find(1, "1");
-    }
-
-    console.log(findSolution(13))
-
-    function whatCentury(year){
-      var century = Math.ceil(year / 100);
-      if (century > 10 && century < 20) return century + "th";
-      switch (century % 10) {
-        case 1: return century + "st";
-        case 2: return century + "nd";
-        case 3: return century + "rd";
-        default: return century + "th";
-      }
-    }
-    
-    console.log(whatCentury(2))
 
