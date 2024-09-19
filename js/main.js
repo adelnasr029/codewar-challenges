@@ -354,4 +354,11 @@ return `${numcharOutRange}/${sLength}`
     console.log(findOdd([1,2,2,3,3,3,3,3,4,3,3,2,2,1]))
 
 
+    const sumContiguousArray = function (ary) {
+      //get the last item
+      const lastItem = ary[ary.length - 1]
+      //Gauss's trick 
+        return lastItem * (lastItem + 1)/2
+      }
 
+      console.log(sumContiguousArray([1,2,3,4,5]))
