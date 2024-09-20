@@ -353,25 +353,18 @@ return `${numcharOutRange}/${sLength}`
 
     console.log(findOdd([1,2,2,3,3,3,3,3,4,3,3,2,2,1]))
 
+// arr of str el, consec letters, valid, one letter missing,length >=2, letter are only in one case
+// str which is missing in input
+// ['a','b','c','d','f'] -> 'e'
+//
+function findMissingLetter(array){
+  // declare a var of alphabets
+  // loop to find the missing the letter
+  // returns the first single el when condition evaluates to true
 
-    const sumContiguousArray = function (ary) {
-      //get the last item
-      const lastItem = ary[ary.length - 1]
-      //Gauss's trick 
-        return lastItem * (lastItem + 1)/2
-      }
-
-      console.log(sumContiguousArray([1,2,3,4,5]))
-
-      // arr of num or str letters 
-      // return new list, unique el, preserving the original order
-      // uniqueInOrder([1,2,2,3,3]) == [1,2,3]
-      var uniqueInOrder=function(iterable){
-        // conditional to determine arr || str then split
-        // filter
-        return typeof iterable === 'string'? iterable.split('').filter((el,i) => el !== iterable[i+1]) : iterable.filter((el,i) =>  el !== iterable[i+1])
-      }
-
-      console.log(uniqueInOrder('ABBCcAD') ) // ['A', 'B', 'C', 'c', 'A', 'D']
-      console.log(uniqueInOrder([1,2,2,3,3]) )// [1,2,3]
-      console.log(uniqueInOrder('AAAABBBCCDAABBB')) // ['A', 'B', 'C', 'D', 'A', 'B']
+  let alphabets = 'abcdefghijklmnopqrstuvwxyz'
+  return array[0] == array[0].toLowerCase()?  alphabets.slice(alphabets.indexOf(array[0].toLowerCase())).split('').find((el,i) => !array.includes(el)) :
+  alphabets.slice(alphabets.indexOf(array[0].toLowerCase())).toUpperCase().split('').find((el,i) => !array.includes(el))
+}
+console.log(findMissingLetter(['a','b','c','d','f']))
+console.log(findMissingLetter(['O','Q','R','S']))
