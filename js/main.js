@@ -353,18 +353,19 @@ return `${numcharOutRange}/${sLength}`
 
     console.log(findOdd([1,2,2,3,3,3,3,3,4,3,3,2,2,1]))
 
-// arr of str el, consec letters, valid, one letter missing,length >=2, letter are only in one case
-// str which is missing in input
-// ['a','b','c','d','f'] -> 'e'
-//
-function findMissingLetter(array){
-  // declare a var of alphabets
-  // loop to find the missing the letter
-  // returns the first single el when condition evaluates to true
+console.log(Math.log2(32))
+let arr = [12,2,3]
+console.log(arr.splice(1,1,700000000)) // [2]
+console.log(arr)// [12, 700000000, 3]
 
-  let alphabets = 'abcdefghijklmnopqrstuvwxyz'
-  return array[0] == array[0].toLowerCase()?  alphabets.slice(alphabets.indexOf(array[0].toLowerCase())).split('').find((el,i) => !array.includes(el)) :
-  alphabets.slice(alphabets.indexOf(array[0].toLowerCase())).toUpperCase().split('').find((el,i) => !array.includes(el))
+// str of letters
+// return the same str where even indexed char upperCased in each word vice versa for odd indexed char
+//"Weird string case" => "WeIrD StRiNg CaSe"
+//
+function toWeirdCase(string){
+  // split by ' '
+  // loop througgh the resulted arr then loop through each el to convert each even indexed char to upper case and vice versa
+  return string.split(' ').map(el => el.split('').map((val,i) => i % 2 == 0? val.toUpperCase() : val.toLowerCase()).join('')).join(' ')
 }
-console.log(findMissingLetter(['a','b','c','d','f']))
-console.log(findMissingLetter(['O','Q','R','S']))
+console.log(toWeirdCase("Weird string case"))
+console.log(toWeirdCase("String"))
