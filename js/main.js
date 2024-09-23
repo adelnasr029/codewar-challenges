@@ -358,17 +358,3 @@ let arr = [12,2,3]
 console.log(arr.splice(1,1,700000000)) // [2]
 console.log(arr)// [12, 700000000, 3]
 
-function pigIt(str){
-  // str of words
-  // new str where each word has its first letter at the end followed by sy
-  // pigIt('Hello world !');     // elloHay orldway !
-  // decalare a var of []
-  //split, loop to reassign each var using push
-  var arrayWord = str.split(' ');
-  return arrayWord.map(function(word) {
-    var firstLetter = word.charAt(0);
-    return word.slice(1) + firstLetter + 'ay';
-  }).join(' ');
-
-}
-console.log(pigIt('Hello world !'))
