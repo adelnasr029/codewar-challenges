@@ -358,25 +358,19 @@ let arr = [12,2,3]
 console.log(arr.splice(1,1,700000000)) // [2]
 console.log(arr)// [12, 700000000, 3]
 
-
-// str of word
-// boolean if the str arg contains vowel and constants letters alternatively
-// isAlt("amazon") // true
-// 
-
-function isAlt(word) {
-  // decalre var of vowels
-  // declare a var of last char of word arg
-  // loop 
-  // conditional
-  for (let x = 1; x < word.length; x++) {
-    if ("aeiou".includes(word[x]) === "aeiou".includes(word[x - 1])) {
-      return false;
-    }
-  }
-  return true;
+// str of words, space, punc
+// new str where letters rearranged alphabetically, punc, spaced are removed
+// alphabetized("The Holy Bible") // "BbeehHilloTy"
+function alphabetized(s) {
+  // delcare 2 var of alphabetics both lower and upper cased are separated
+  // declare var of where the input str is filtered out from punc and whiltespaced
+  //the sort 
+  let lowerAlpha = 'abcdefghijklmnopqrstuvwxyz'
+  let upperAlpha = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase()
+  let arr =  s.split('').filter(el => upperAlpha.includes(el) || lowerAlpha.includes(el) ).map((el,i) => [el, el.toLowerCase().charCodeAt()] )
+return arr.sort((a,b) => a[1] - b[1]).map(el => el[0]).join('')
 }
-console.log(isAlt('amazon'))
-console.log(isAlt('banana'))
-console.log(isAlt("apple"))
 
+
+
+console.log(alphabetized("The Holy Bible"))
