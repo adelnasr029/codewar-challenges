@@ -359,22 +359,32 @@ console.log(arr.splice(1,1,700000000)) // [2]
 console.log(arr)// [12, 700000000, 3]
 
 
-// str of binary which might be empty
-// equivalent decoded text (the text is ASCII encoded) to that binary
-// binaryToString('01100001'), 'a'
+// str of words 
+// arr of subarrs of 2 el one represent the char and the second represen tthe count
+// runLengthEncoding("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb")
+ // => [[34,'a'], [3,'b']]
 // 
-function binaryToString(binary) {
-  //split the str binary into 8-chuncks
-  // declare a var of []
-  // loop to reassign
-let arr = []
-if(binary.length){
-  for(let i = 0; i < binary.length; i += 8){
-    arr.push(binary.substr(i,8))
-  }
-  return arr.map(el => String.fromCharCode(parseInt(el, 2))).join('')
-}
-return ''
+var runLengthEncoding = function(str){
+  // declare var of []
+  // loop then declare a var count = 1
+  //  conditional to reassign the count 
+  let count = 1
+  let arr = []
+  for(let i = 0; i < str.length; i++){
+    if(str[i] == str[i+1]){
+      count++
+    } else{
+      arr.push([count, str[i]])
+      count = 1
+    }
+    }
+  
+  return arr
 }
 
-console.log(binaryToString('01001011010101000100100001011000010000100101100101000101'))
+console.log(runLengthEncoding("hello world!"))
+console.log(runLengthEncoding("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb")
+) // => [[34,'a'], [3,'b']]
+console.log(      runLengthEncoding("WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW"),
+)//      [[12,'W'],[1,'B'],[12,'W'],[3,'B'],[24,'W'],[1,'B'],[14,'W']]
+
