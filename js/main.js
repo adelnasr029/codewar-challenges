@@ -358,19 +358,23 @@ let arr = [12,2,3]
 console.log(arr.splice(1,1,700000000)) // [2]
 console.log(arr)// [12, 700000000, 3]
 
-// str of words, space, punc
-// new str where letters rearranged alphabetically, punc, spaced are removed
-// alphabetized("The Holy Bible") // "BbeehHilloTy"
-function alphabetized(s) {
-  // delcare 2 var of alphabetics both lower and upper cased are separated
-  // declare var of where the input str is filtered out from punc and whiltespaced
-  //the sort 
-  let lowerAlpha = 'abcdefghijklmnopqrstuvwxyz'
-  let upperAlpha = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase()
-  let arr =  s.split('').filter(el => upperAlpha.includes(el) || lowerAlpha.includes(el) ).map((el,i) => [el, el.toLowerCase().charCodeAt()] )
-return arr.sort((a,b) => a[1] - b[1]).map(el => el[0]).join('')
+
+// str of binary which might be empty
+// equivalent decoded text (the text is ASCII encoded) to that binary
+// binaryToString('01100001'), 'a'
+// 
+function binaryToString(binary) {
+  //split the str binary into 8-chuncks
+  // declare a var of []
+  // loop to reassign
+let arr = []
+if(binary.length){
+  for(let i = 0; i < binary.length; i += 8){
+    arr.push(binary.substr(i,8))
+  }
+  return arr.map(el => String.fromCharCode(parseInt(el, 2))).join('')
+}
+return ''
 }
 
-
-
-console.log(alphabetized("The Holy Bible"))
+console.log(binaryToString('01001011010101000100100001011000010000100101100101000101'))
