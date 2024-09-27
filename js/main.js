@@ -359,32 +359,29 @@ console.log(arr.splice(1,1,700000000)) // [2]
 console.log(arr)// [12, 700000000, 3]
 
 
-// str of words 
-// arr of subarrs of 2 el one represent the char and the second represen tthe count
-// runLengthEncoding("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb")
- // => [[34,'a'], [3,'b']]
-// 
-var runLengthEncoding = function(str){
-  // declare var of []
-  // loop then declare a var count = 1
-  //  conditional to reassign the count 
-  let count = 1
-  let arr = []
-  for(let i = 0; i < str.length; i++){
-    if(str[i] == str[i+1]){
-      count++
-    } else{
-      arr.push([count, str[i]])
-      count = 1
-    }
-    }
-  
-  return arr
+// str of words  || hexamdecimal
+// hexadecimal str, text 
+/*Converter.toHex("Look mom, no hands")
+=> "4c6f6f6b206d6f6d2c206e6f2068616e6473"
+*/
+
+function toHex(str){
+//split
+// loop converting each char to binary 
+// then convert each binary of each char to hexadecimal
+return str.split('').map(el => el.charCodeAt().toString(16)).join('')
 }
+console.log(toHex("Look mom, no hands"))
 
-console.log(runLengthEncoding("hello world!"))
-console.log(runLengthEncoding("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbb")
-) // => [[34,'a'], [3,'b']]
-console.log(      runLengthEncoding("WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWBWWWWWWWWWWWWWW"),
-)//      [[12,'W'],[1,'B'],[12,'W'],[3,'B'],[24,'W'],[1,'B'],[14,'W']]
-
+function toAscii(hex){
+  // declare a var of ''
+  // loop 
+  // decalare a var of ''
+  let str = ''
+  for(let i = 0; i < hex.length; i += 2){
+    let part = hex.substr(i,2)
+    str += String.fromCharCode(part.toString(16))
+  }
+  return str;
+}
+console.log(toAscii('4c6f6f6b206d6f6d2c206e6f2068616e6473'))
