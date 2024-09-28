@@ -359,29 +359,25 @@ console.log(arr.splice(1,1,700000000)) // [2]
 console.log(arr)// [12, 700000000, 3]
 
 
-// str of words  || hexamdecimal
-// hexadecimal str, text 
-/*Converter.toHex("Look mom, no hands")
-=> "4c6f6f6b206d6f6d2c206e6f2068616e6473"
-*/
+// str of letters, 
+// arr of 2 el [char, length]
+// longestRepetition("aaaabb"),      ["a",4] 
+//
+function longestRepetition(s) {
+  // declare var arr of []
+  // declare var of ''
+  // loop, conditional to reassign both vars
+  let res = []
+  let count = 1
 
-function toHex(str){
-//split
-// loop converting each char to binary 
-// then convert each binary of each char to hexadecimal
-return str.split('').map(el => el.charCodeAt().toString(16)).join('')
-}
-console.log(toHex("Look mom, no hands"))
-
-function toAscii(hex){
-  // declare a var of ''
-  // loop 
-  // decalare a var of ''
-  let str = ''
-  for(let i = 0; i < hex.length; i += 2){
-    let part = hex.substr(i,2)
-    str += String.fromCharCode(part.toString(16))
+  for(let i = 0; i < s.length; i++){
+    if(s[i] == s[i+1]){
+      count++
+    } else{
+      res.push([s[i], count])
+      count = 1
+    }
   }
-  return str;
+  return s.length > 0 ? res.sort((a,b) => b[1] - a[1])[0] : ['', 0]
 }
-console.log(toAscii('4c6f6f6b206d6f6d2c206e6f2068616e6473'))
+console.log(longestRepetition(''))
