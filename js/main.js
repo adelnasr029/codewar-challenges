@@ -359,25 +359,13 @@ console.log(arr.splice(1,1,700000000)) // [2]
 console.log(arr)// [12, 700000000, 3]
 
 
-// str of letters, 
-// arr of 2 el [char, length]
-// longestRepetition("aaaabb"),      ["a",4] 
-//
-function longestRepetition(s) {
-  // declare var arr of []
-  // declare var of ''
-  // loop, conditional to reassign both vars
-  let res = []
-  let count = 1
-
-  for(let i = 0; i < s.length; i++){
-    if(s[i] == s[i+1]){
-      count++
-    } else{
-      res.push([s[i], count])
-      count = 1
-    }
-  }
-  return s.length > 0 ? res.sort((a,b) => b[1] - a[1])[0] : ['', 0]
+function grabscrab(anagram, dictionary) {
+  // 2 params, 1st is str, 2nd is arr of words
+  // new arr of words that matches the letters in anagram
+  // grabscrab( "ortsp", ["sport", "parrot", "ports", "matey"] )
+  // 
+  let anag = anagram.split('').sort().join('')
+  return dictionary.filter(el => el.split('').sort().join('') === anag)
 }
-console.log(longestRepetition(''))
+
+console.log(grabscrab("oob", ["bob", "baobab"]))
