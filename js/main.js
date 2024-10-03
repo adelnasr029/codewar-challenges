@@ -352,10 +352,8 @@ return `${numcharOutRange}/${sLength}`
     }
 
     console.log(findOdd([1,2,2,3,3,3,3,3,4,3,3,2,2,1]))
-
 console.log(Math.log2(32))
 let arr = [12,2,3]
 console.log(arr.splice(1,1,700000000)) // [2]
 console.log(arr)// [12, 700000000, 3]
-
 
