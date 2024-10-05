@@ -357,3 +357,4 @@ let arr = [12,2,3]
 console.log(arr.splice(1,1,700000000)) // [2]
 console.log(arr)// [12, 700000000, 3]
 
+
