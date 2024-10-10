@@ -357,16 +357,4 @@ let arr = [12,2,3]
 console.log(arr.splice(1,1,700000000)) // [2]
 console.log(arr)// [12, 700000000, 3]
 
-
-function countFeelings(string, array) {
-  //func takes 2 params str of letters lowercase & arr of str// output num of how many el in the arr in the str
-  // 2 params, 1st is str random letters lowercase, 2nd arr of words
-  // num which is the count of how many arr el are included in the arr
-  // countFeelings('abcdkasdfvkadf, ['desire', 'joy', 'shame', 'longing', 'fear'])// 0
-  // declare a var of count = 0
-  // loop to reassign it based on conditional if(string.includes(arr[i])) count++
-  let count = 0 
-  return `${array.filter(el => el.split('').every(val =>string.includes(val))).length} feelings.`
-}
-
-console.log(countFeelings('yliausoenvjw', ['anger', 'awe', 'joy', 'love', 'grief']))
+  
