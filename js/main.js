@@ -340,21 +340,27 @@ return `${numcharOutRange}/${sLength}`
 
 //abcdefghijklmnopqrstuvwxyz
 
-  function findOdd(A) {
-    //arr of nums that could be odd and even
-    //return the num that it occurs for odd num of times
-    // [1,1,2] output 2
-    // declare a var of {}
-    // loop using find method applying conditional
-    let count = {}
-    A.map(el => count[el] = (count[el] + 1 || 1))
-    return A.find(el => count[el] % 2 == 1)
+
+
+
+const uniqSort = function(arr){
+  const breadcrumbs = {}; // here's we cached the values we've seen before
+  const result = []
+  for(let i = 0; i < arr.length; i++){
+    if(!breadcrumbs[arr[i]]){
+      result.push(arr[i])
+      breadcrumbs[arr[i]] = true
     }
+  }
+  return result.sort((a,b)=> a - b)
+}
 
-    console.log(findOdd([1,2,2,3,3,3,3,3,4,3,3,2,2,1]))
-console.log(Math.log2(32))
-let arr = [12,2,3]
-console.log(arr.splice(1,1,700000000)) // [2]
-console.log(arr)// [12, 700000000, 3]
+console.log( uniqSort([4,2,2,3,2,2,3,4]))
 
-  
+function deleteNth(arr,n){
+  let obj = {}
+  return arr.filter(el => (obj[el] = obj[el]+1 || 1) <= n)
+}
+console.log(deleteNth([20,37,20,21], 1))
+console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
+
