@@ -357,10 +357,74 @@ const uniqSort = function(arr){
 
 console.log( uniqSort([4,2,2,3,2,2,3,4]))
 
-function deleteNth(arr,n){
-  let obj = {}
-  return arr.filter(el => (obj[el] = obj[el]+1 || 1) <= n)
+
+function joinElements(arr, joinStr){
+// accumulator method
+// each time after each loop we're not only incrementing our index but we're saving some result
+
+  function recurse(index, result){
+    result += arr[index]
+
+    if(index === arr.length -1){//base case
+      return result
+    } else{
+      return recurse(index + 1, result + joinStr)// recursive case
+    }
+  }
+return recurse(0,'')
 }
-console.log(deleteNth([20,37,20,21], 1))
-console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3))
+
+console.log(joinElements(['s', 'cr', 't cod', ' :) :)'], 'e'))
+
+function secretCode(arr, joinEl){
+  let res = ''
+  for(let i = 0; i < arr.length - 1; i++){
+    res += arr[i] + joinEl
+  }
+  return res
+}
+
+console.log(secretCode(['s', 'cr', 't cod', ' :) :)'], 'e'))
+
+
+const memoize = (fn) => {
+  let cache = {};
+  return (...arg) => {
+      let n = arg[0];
+      if(n in cache ){
+        console.log('Fetching from cach', n)
+        return cache[n]
+      } else{
+        console.log('Caculating result', n)
+        let result = fn(n);
+        cache[n] = result;
+        return result;
+      }
+  }
+}
+const factorial = memoize(
+  (x) => {
+    if(x === 0){
+      return 1
+    } else {
+      return x * factorial(x-1)
+    }
+  }
+)
+
+console.log(factorial(5))
+
+function linearsearch(list, item){
+  let index = -1
+list.forEach((el,i) => {
+  if(el === item){
+index = i// returns the last index
+  }
+})
+return index
+}
+
+console.log(linearsearch([2,6,7,90,90], 90))
+
+console.log(Math.floor(92/2))
 
