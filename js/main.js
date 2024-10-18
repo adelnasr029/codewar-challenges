@@ -428,3 +428,22 @@ console.log(linearsearch([2,6,7,90,90], 90))
 
 console.log(Math.floor(92/2))
 
+function zebra(arr){
+  const lastItem = arr[arr.length - 1]
+  return lastItem * (lastItem + 1)/2
+}
+
+console.log(zebra([1,2,3,4,5]))
+
+// func(arr) => unique num
+// nums, unsorted, present twice except one num, always valid intg, 1 to 2147483647, speed optimized
+// [ 1, 8, 4, 4, 6, 1, 8 ] => 6
+
+function findUnique(numbers) {
+// loop using find upon condition of numbers.indexOf(el) == numbers.lastIndexOf(el)
+return numbers.reduce((a, b) => a ^ b);
+
+}
+console.log(findUnique([ 2, 2, 5, 4, 4, 3, 3, 1, 1 ]), 5)
+console.log(findUnique([ 3, 5, 5, 4, 4, 3, 2, 2, 9 ]), 9)
+
