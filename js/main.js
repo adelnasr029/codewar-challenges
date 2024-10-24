@@ -440,11 +440,23 @@ function repSet(n) {
   // arr of nested empty arr of multiple levels
   // return `n=${count}` which str that display that count of nested arr
   // 
-  let count = 0
   if(n == 0){
     return []
   }
   let prev = repSet(n-1)
   return [...prev, prev]
 }
-console.log(repSet([[[]]]))
+console.log(repSet(3))
+//repSet(2) [[[[]]]]
+//repSet(1)
+//repSet(0)
+
+
+//func takes str of words => arr of hexadecimal of the words 
+// str of words separated by space
+
+function wordsToHex(words) {
+  return words.split(' ').map(el => el.length >= 3? el.split('').slice(0,3).map(val =>  val.charCodeAt().toString(16)).join('') :  el.split('').map(val => val.charCodeAt().toString(16)).join('')).map(el => '#' + el + '00')
+}
+console.log(wordsToHex("Hello, my name is Gary and I like cheese."))
+// ['#48656c', '#6d7900', '#6e616d', '#697300', '#476172', '#616e64', '#4900', '#6c696b', '#636865']
