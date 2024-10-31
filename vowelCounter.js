@@ -8,3 +8,4 @@ function vowelCounter(str){
         0
     }
 }
+

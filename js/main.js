@@ -1,49 +1,46 @@
 //abcdefghijklmnopqrstuvwxyz
 
-function reverseStr(str){
-  if(str === ''){ //base case
-    return ''
-  } else{
-   return  reverseStr(str.substr(1)) + str[0]
-  }
-}
-//reverseStr('code')// 'c' 
-//reverseStr('ode') // 'o'
-//reverseStr('de') // 'd'
-//reverseStr('e') // 'e'
-// reverseStr('') // ''
-
-//reverseStr(str.substr(1)) + str[0] // str = 'abc', str 
-
-
-console.log(reverseStr('abc'))
-function fatorial(n){
-  if(n === 0){
-    return 1
-  } else{
-  return   fatorial(n-1) * n
-  }
+function palindromeChecker(text) {
+  // Code goes here
+  let arr = text.toLowerCase().split('')
+  return arr.every((el,i) => el === arr[arr.length - i - 1] && i <= Math.floor(arr.length/2))
+  // for(let i = 0; i < arr.length/2; i++){
+  //     if(arr[i] !== arr[arr.length - i - 1]){
+  //         return false
+  //     }
+  // }
+  // return true
 }
 
-console.log(fatorial(4))
+console.log(palindromeChecker('madam'))
+console.log(palindromeChecker('adel'))
 
-function fib (n){
-  if( n >= 3){
-    return fib(n - 1) + fib(n - 2)
-  } else{
-    return 1 
+function maxFrequent(text){
+  let charMap = {} // to keep track char and the number it exists
+  let maxChar = ''
+  let maxCount = 0
+
+  for(char of text){
+      charMap[char] = charMap[char] + 1 || 1
+  }
+
+  for(char in charMap){
+      if( charMap[char] > maxCount){
+          maxCount = charMap[char]
+          maxChar =  char
+      }
+  }
+  return char
+}
+console.log(maxFrequent('aaabbccccc'))
+
+
+function forIn(str){
+  for(char in str){
+    console.log(char)
   }
 }
 
-function countVowel(str){
-  let vowel = 'aeiou'
-  let count = 0
-  for( let char of str){
-    if(vowel.includes(char)){
-       count++
-    }
-  }
-  return count
-  return [...str].filter(el => vowel.includes(el)).length 
-}
-console.log(countVowel('anehizxcv'))
+forIn({a: 2, b: 5})
+let club = 'Real MaDrid'
+console.log([... new Set(club)])
