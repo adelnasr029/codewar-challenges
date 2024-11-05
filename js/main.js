@@ -1,23 +1,17 @@
 //abcdefghijklmnopqrstuvwxyz
 
+// function tht takes arr of nums and num which is a target => arr of subarr of arr el that their sum == target
+function twoSum(nums, target){
+  //declare result var of []
+  let result = []
+  //declare a var of numMap of {}
+  let numMap = {}
+  //loop 
+  for(let char of nums){
+    const diff = target - char
+    numMap[diff]? result.push([char, diff]) : numMap[char] = true
+  }
+  return result
+}
 
-
-
-//func takes n as an intg param => function counter
-// num, intger/ +ve/-ve/ always valid
-// num 
-// 
-var createCounter = function(n) {
-  // create a closure
-  // by return a func that increment n with each call
-  // closure is func with an inner func then the inner func can access var defined in the outer func scope 
-return  () => n++
-};
-
-let count = createCounter(10)
-console.log([count(), count(), count()])
-
-// const mapReduce = (array, filterFunction) => 
-//   array.reduce((acc,current) => filterFunction(current)? [...acc, current] : acc, [])
-
-// console.log(mapReduce([1,2,3,4], x => x % 2 === 0))
+console.log(twoSum([1,2,2,3,4], 4))
