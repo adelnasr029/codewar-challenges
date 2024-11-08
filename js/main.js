@@ -1,17 +1,18 @@
 //abcdefghijklmnopqrstuvwxyz
 
-// function tht takes arr of nums and num which is a target => arr of subarr of arr el that their sum == target
-function twoSum(nums, target){
-  //declare result var of []
-  let result = []
-  //declare a var of numMap of {}
-  let numMap = {}
-  //loop 
-  for(let char of nums){
-    const diff = target - char
-    numMap[diff]? result.push([char, diff]) : numMap[char] = true
-  }
-  return result
-}
 
-console.log(twoSum([1,2,2,3,4], 4))
+function chunkArray(array, size) {
+let result = []
+let lastArray = result[result.length -1]
+for(char of array){
+  if(!lastArray || lastArray.length === 5){
+    result.push([char])
+  } else {
+    lastArray.push(char)
+  }
+}
+}
+// [[0]]
+let result = [5]
+console.log(!1 == false)
+// console.log(chunkArray([0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], 5))
