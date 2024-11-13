@@ -57,4 +57,28 @@ const memo = (cb) => {
 }
 // const memoize = memo(times10)
 // console.log(memoize(5))
+function mergeArrays(...arrays) {
+ // some more code here
+ let jointArray = []
 
+ arrays.forEach(array => {
+     jointArray = [...jointArray, ...array]
+ });
+ return new Set([...jointArray]) + []
+}
+
+// console.log(mergeArrays([1,3,3,5], [1,4,2,5]))
+// let map = new Map();
+// map.set('banana', 1);
+// map.set('orange', 2);
+// map.set('meat', 4);
+
+function arrayFilter(arr, func){
+  for(char of arr){
+    if(func(char)){
+      return char
+    } else{
+      return undefined
+    }
+  }
+}

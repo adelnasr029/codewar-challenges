@@ -21,6 +21,7 @@ var majorityElement = function(nums) {
        }
     }
     return result
+    // return nums.find(el => (numMap[el] = numMap[el] + 1 || 1) > nums.length/2)
   };
   
   console.log(majorityElement([3,2,3]))
