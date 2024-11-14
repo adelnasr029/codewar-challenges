@@ -1,34 +1,21 @@
 //abcdefghijklmnopqrstuvwxyz
 
-
-// func takes 2 params, arr of nums, intgers & val intger
-// 
-
-
-
-var removeElement = function(nums, val) {
-    let k = 0;
-
-    // Iterate through each element in the array
-    for (let i = 0; i < nums.length; i++) {
-        // If the current element is not equal to val
-        if (nums[i] !== val) {
-            // Move it to the current k position
-            nums[k] = nums[i];
-            // Increment k
-            k++;
+var removeDuplicates = function(nums) {
+    if(nums.length === 0) return 0
+    let k = 1
+    for(let i = 1; i < nums.length; i++){
+        if(nums[i] !== nums[i - 1]){
+            nums[k] = nums[i]
+            k++
         }
     }
-
-    // Return the count of elements not equal to val
-    return k;};
-
+    return nums.slice(0,k)
+};
 
 
 
-console.log(removeElement([0,1,2,2,3,0,4,2], 2))
-console.log(removeElement([3,2,2,3], 3))
 
+console.log(removeDuplicates([0,0,1,1,1,2,2,3,3,4]))
 
 
 
