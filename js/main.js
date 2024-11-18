@@ -16,27 +16,31 @@ return result
 
 // console.log(uniqueSort([3,4,1,3,2,3,2,6,5]))
 
-// let memo = {}
+// cleaning our global scope by moving our cache inside our function
+// in closure we retain access to variables we're passing before, so we can remember prior values. 
 
-// function factorial(n){
+const factorial = n => n < 2? n : n * times10(n-1)
 
-//      if(n < 2){
-//         return n
-//     } else if(memo[n]){
-//         return memo[n]
-//     }
-//     else {
-//      let result =   n * factorial(n-1)
-//      memo[n] = result
-//      return result
-//     }
-// }
+const memoize = (cb) => {
+let memo = {}
 
-// console.log(factorial(50))
+return function factorial(n){
 
-const factorial = (num) => num < 2? num : num * factorial(num-1)
-function sumFactorial(arr){
-return arr.reduce((acc,c) => acc + factorial(c), 0)
+     if(n < 2){
+        return n
+    } else if(memo[n]){
+        return memo[n]
+    }
+    else {
+     let result = cb(n)
+     memo[n] = result
+     return result
+    }
+}
 }
 
-console.log(sumFactorial([4,6]), 744)
+const memoize10 = memoize(times10)
+console.log(memoize10(5))
+// const parentFact = factClosure()
+// console.log(parentFact(50))
+
