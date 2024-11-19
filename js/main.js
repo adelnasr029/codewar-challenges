@@ -1,28 +1,42 @@
 //abcdefghijklmnopqrstuvwxyz
 
-//func takes obj of key/pairs => obj where each value is filtered out returning values without repetitions.
-
-// obj of key/value(arr of str)
-
-
-const removeDuplicateIds = (obj) => {
-  const res = {}
-  const keys = Object.keys(obj).sort((a,b) => b - a)
-  const seen = new Set();
-
-  for(const key of keys){
-    res[key] = [];
-    for(const val of obj[key]){
-      if(!seen.has(val)){
-        res[key].push(val)
-        seen.add(val)
-      }
+const uniqueSort = (arr) => {
+    let breadCrumbs = {}
+    let result = []
+    let sortedArr = []
+    let max = 0
+    for(let num of arr){
+        if(!breadCrumbs[num]){
+        breadCrumbs[num] = true
+        result.push(num)
+        } 
     }
-  }
-  return res
+return result
 }
 
-console.log(removeDuplicateIds({
-  "1": ["A", "B", "C"],
-  "2": ["A", "B", "D", "A"],
-}))
+// console.log(uniqueSort([3,4,1,3,2,3,2,6,5]))
+
+// let memo = {}
+
+// function factorial(n){
+
+//      if(n < 2){
+//         return n
+//     } else if(memo[n]){
+//         return memo[n]
+//     }
+//     else {
+//      let result =   n * factorial(n-1)
+//      memo[n] = result
+//      return result
+//     }
+// }
+
+// console.log(factorial(50))
+
+const factorial = (num) => num < 2? num : num * factorial(num-1)
+function sumFactorial(arr){
+return arr.reduce((acc,c) => acc + factorial(c), 0)
+}
+
+console.log(sumFactorial([4,6]), 744)
