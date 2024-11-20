@@ -19,13 +19,17 @@ return result
 // cleaning our global scope by moving our cache inside our function
 // in closure we retain access to variables we're passing before, so we can remember prior values. 
 
-const factorial = n => n < 2? n : n * times10(n-1)
-
+const factorial = (n) => {
+    if(n === 0){
+        return 1
+    } else {
+        return n * factorial(n-1)
+    }
+}
 const memoize = (cb) => {
 let memo = {}
 
-return function factorial(n){
-
+return (n) => {
      if(n < 2){
         return n
     } else if(memo[n]){
@@ -39,8 +43,66 @@ return function factorial(n){
 }
 }
 
-const memoize10 = memoize(times10)
+const memoize10 = memoize(factorial)
 console.log(memoize10(5))
 // const parentFact = factClosure()
 // console.log(parentFact(50))
 
+
+//accumulator technique
+function joinElement(array, joinString){
+    function recurse(index, resultSofar){
+        resultSofar += array[index]
+        if(index === array[array.length - 1]){
+            return resultSofar
+        } else {
+            return recurse(index + 1, resultSofar + joinString);
+        }
+    }
+    return recurse(0, '')
+}
+// console.log(joinElement(['s', 'cr', 't cod', ':) :)'], 'e'))
+//iterative technique
+// function joinElement(array, joinString){
+//     let resultSoFor = ''
+// for(let i = 0; i < array.length - 1; i++){
+//     resultSoFor += array[i] + joinString;
+//    }
+//   return resultSoFar + array[array.length - 1]
+// }
+
+function binarySearch(arr,item){
+    let min = 0
+    let max = arr.length -1
+    let guess; 
+
+    while(min <= max){
+        guess = Math.floor((min + max)/2)
+        if(arr[guess] === item){
+            return guess
+        } else {
+            if(list[guess] < item){
+                min = guess + 1
+            } else {
+                max = guess - 1
+            }
+        }
+    }
+    return -1
+}
+
+const sumNested = arr => {
+    let sum = 0
+    for(let el of arr){ 
+    if(Array.isArray(el)){
+       sum += sumNested(el)
+    } else {
+       sum +=el
+    }
+    }
+    return sum
+  };
+
+console.log(sumNested([1, [2, [3, [4]]]]))
+
+// [1, [2, [3, [4]]]].reduce((0, 1) => 0 + sumNested(1))
