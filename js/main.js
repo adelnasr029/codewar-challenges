@@ -91,18 +91,14 @@ function binarySearch(arr,item){
     return -1
 }
 
-const sumNested = arr => {
-    let sum = 0
-    for(let el of arr){ 
-    if(Array.isArray(el)){
-       sum += sumNested(el)
-    } else {
-       sum +=el
-    }
-    }
-    return sum
-  };
+function SumSquares(l){
+    return l.reduce((acc,c) => {
+        if(Array.isArray(c)){
+            return acc + SumSquares(c)
+        } else {
+           return acc + c*c
+        }
+      }, 0)
+}
 
-console.log(sumNested([1, [2, [3, [4]]]]))
-
-// [1, [2, [3, [4]]]].reduce((0, 1) => 0 + sumNested(1))
+console.log(SumSquares([[1,2],3]))
