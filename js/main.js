@@ -91,17 +91,35 @@ function binarySearch(arr,item){
     return -1
 }
 
-// func takes arr of nums +ve intg => arr of the reduce simplest 
+let gcd = (a,b) => b === 0? a : gcd(b,a % b)
 
-function reduce(fraction) {
-    //loop 
-    res  = 1
-    for(let i = 1; i < Math.max(...fraction); i++){
-        if(Number.isInteger(fraction[0]/i) && Number.isInteger(fraction[1]/i) ){
-            res = i
-        } 
+
+/*
+(1785, 546) => 546 === 0? 1785 : gcd(546, 1785 % 546)
+(546, 147) => 147 === 0? 546 : gcd(147, 546 % 147)
+(147, 105) => 105 === 0? 147 : gcd(105, 147 % 105)
+(105, 42) => 42 === 0? 105 : gcd(42, 105 % 42)
+(42, 21) => 21 === 0? 42 : gcd(21, 42 % 21)
+(21, 0) => 0 === 0? 21 : // result 21
+*/
+function sort(initialArray, sortingArray) {
+    let obj = {}
+    let result = []
+    let max = 0
+    for(let i = 0; i < initialArray.length; i++){
+        if(!obj[initialArray]){
+            obj[initialArray[i]] = sortingArray[i]
+        }
+  }
+  for(let char in obj){
+    if(obj[char] > 0){
+        result.push(char)
+        max = obj[char]
+    } else{
+        result.push(char)
     }
-    return fraction.map(el => el/res)
   }
 
-  console.log(reduce([45,120]))
+  return result
+}
+  console.log(sort(['x', 'y', 'z'], [1, 2, 0]))
