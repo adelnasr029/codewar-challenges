@@ -1,4 +1,3 @@
-//abcdefghijklmnopqrstuvwxyz
 // func takes arr of seq of dimenstions of rect & circles => new seq sorted ascending by area
 // arr of el & sub arr of 2 el(width, length)
 // new sorted arr version fromt the given arr
