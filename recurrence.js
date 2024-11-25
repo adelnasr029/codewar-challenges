@@ -12,25 +12,26 @@ function recurrence(base, formula, term) {
   }
 
   // term === 3
+  // n => n + 3
   /*
   function recurrence(base, formula, term) {
     if(term === 1){
     return base
     } else {
-    return formula(recurrence(base, formula, term - 1))
+    return formula(recurrence(base,  n => n + 3, term - 1))
     }
-  }
+  } 
   */
 
     // term === 2
   /*
-  function recurrence(base, formula, term) {
+  function recurrence(base,  n => n + 3, term) {
     if(term === 1){
     return base
     } else {
-    return formula(recurrence(base, formula, term - 1))
+    return formula(recurrence(base,  n => n + 3, term - 1))
     }
-  }
+  }// 1 => 1 + 3 = 4
   */
 
     // term === 1
