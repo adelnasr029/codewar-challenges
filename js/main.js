@@ -1,11 +1,17 @@
 //abcdefghijklmnopqrstuvwxyz
 
-function lenR(arr) {
-  if (arr.length == 0) {
-    return 0;
+function max(arr, counter = arr.length -1, biggest = arr[0]){
+  if(counter <= 0){
+    if(arr[counter] > biggest){
+      biggest = -Infinity
+    }
+    return biggest
+  } else {
+    if (arr[counter] > biggest){
+      biggest = arr[counter]
+    }
+    return max(arr, counter - 1, biggest)
   }
-  return 1 + lenR(arr.slice(1));
 }
 
-console.log(lenR([1,2,3,4,5]))
-console.log([3,5,5].slice(1))
+console.log(max([5,3,10,12]))
