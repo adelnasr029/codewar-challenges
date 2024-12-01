@@ -1,17 +1,13 @@
 //abcdefghijklmnopqrstuvwxyz
 
-function max(arr, counter = arr.length -1, biggest = arr[0]){
-  if(counter <= 0){
-    if(arr[counter] > biggest){
-      biggest = -Infinity
-    }
-    return biggest
-  } else {
-    if (arr[counter] > biggest){
-      biggest = arr[counter]
-    }
-    return max(arr, counter - 1, biggest)
-  }
-}
 
-console.log(max([5,3,10,12]))
+
+const sequenceSum = (begin, end, step) => {
+  let total = 0
+ for(let i = begin; i <= end; i+=step){
+   total +=i
+ }
+  return total
+};
+
+console.log(sequenceSum(2, 6, 2), 12)
