@@ -1,5 +1,3 @@
-//abcdefghijklmnopqrstuvwxyz
-
 // function takes a num, intger, always valid  => boolean if it's power of 2
 //num, intger, always valid 
 // boolean depending on if the num is a power of
