@@ -1,5 +1,3 @@
-//abcdefghijklmnopqrstuvwxyz
-
 // function 
 // str of n lines, each substr is n char long
 //
@@ -18,5 +16,5 @@ console.log(horMirror("abcd\nefgh\nijkl\nmnop"))
 
 
 function oper(fct, s) {
-    // Your code
+    return fct(s)
 }

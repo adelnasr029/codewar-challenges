@@ -13,4 +13,4 @@ return powerTwo(n/2) // recursive case
 }
 
 
-console.log(powerTwo(16))
+console.log(powerTwo(100))
