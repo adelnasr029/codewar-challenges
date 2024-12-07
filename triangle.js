@@ -1,5 +1,3 @@
-//abcdefghijklmnopqrstuvwxyz
-
 // function that takes a str of letters => returns as str in the shape of triangle
 // str of letters, always valid, upperCased
 // return a str of one letter
@@ -10,6 +8,7 @@ function triangle(row) {
     // declare a var res 
     // loop to reassign res var
     // recursion through resulted res till reaching to final result
+    
     if (row.length <= 1) // base case
       return row;
   
@@ -25,4 +24,3 @@ function triangle(row) {
   
   }
 console.log(triangle('R R G'))  
-
