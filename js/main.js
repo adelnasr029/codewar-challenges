@@ -1,28 +1,23 @@
 //abcdefghijklmnopqrstuvwxyz
 
-// function that takes a str of letters => returns as str in the shape of triangle
-// str of letters, always valid, upperCased
-// return a str of one letter
-//  triangle('GG')// 'G',  triangle('BR')// 'G'
 
-function triangle(row) {
-    // conditional if row.length <= 1 => row
-    // declare a var res 
-    // loop to reassign res var
-    // recursion through resulted res till reaching to final result
-    if (row.length <= 1) // base case
-      return row;
-  
-    let res = '';
-  
-    for (let i = 0; i < row.length - 1; i++)
-  
-      res += row[i] === row[i + 1]
-           ? row[i]
-           : 'RGB'.replace('G', '').replace(row[i + 1], '');
-  
-    return triangle(res);
-  
-  }
-console.log(triangle('R R G'))  
 
+// func takes a str and arr of str => true or false if the arr contains all rots
+// str & arr of strs, the str not always valid, maybe ''
+// boolean if the arr contains all the possiblities of the given str rots
+// contain_all_rots("bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]) -> true
+
+function containAllRots(strng, arr) {
+    // loop through the arr
+    // conditional to determine if the arr not included the new fomed str fromed strng.slice(i) + strng(0,i)
+    // return false either return true
+    for(let i = 0; i < strng.length; i++){
+        if( arr.indexOf(strng.slice(i) + strng.slice(0,i)) == -1){
+            return false
+        }
+    }
+
+    return true
+}
+
+console.log( containAllRots( "bsjq", ["bsjq", "qbsj", "sjqb", "twZNsslC", "jqbs"]) )
