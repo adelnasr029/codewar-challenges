@@ -1,5 +1,3 @@
-//abcdefghijklmnopqrstuvwxyz
-
 function solve(s){
     let vowels = 'aeiou'
     let current = 0
