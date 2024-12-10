@@ -1,21 +1,14 @@
 //abcdefghijklmnopqrstuvwxyz
 
-function solve(s){
-    let vowels = 'aeiou'
-    let current = 0
-    let max = 0
-    for(let i = 0; i < s.length; i++){
-        if(vowels.includes(s[i])){
-            current++
-            if(current > max){
-                max = current
-            }
-        } else{
-            current = 0
-        }
+function pattern(n){
+    if(n < 1){
+      return ''
     }
-     
-return  max
+  let res = []
+  for(let i = 1; i <= n; i++){
+    res.push(`${i}`.repeat(i))
+  }
+    return res.join('\n')
   }
 
-  console.log(solve('codewarriors'))
+  console.log(pattern(11))
