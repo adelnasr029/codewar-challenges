@@ -1,5 +1,3 @@
-//abcdefghijklmnopqrstuvwxyz0123456789
-
 // func, str => boolean if the passed str is palindrome 
 //palindrome reads teh same forward adn backward, afer converting all letters to lowercase and removing all non-alphanumeric char, 
 // alphanumberic char (letters and nums)
@@ -21,22 +19,3 @@ var isPalindrome = function(s) {
 
 console.log(isPalindrome("A man, a plan, a canal: Panama"), 'true')
 console.log(isPalindrome("race a car"), 'false')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
