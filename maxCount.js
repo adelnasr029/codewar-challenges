@@ -1,4 +1,4 @@
-
+// func takes 3 params, arr, num and another num which is maxSum => should return how many nums from 1 <= n not in the givnen arr && not
 
 var maxCount = function(banned, n, maxSum) {
     let k = 0

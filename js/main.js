@@ -1,31 +1,26 @@
 //abcdefghijklmnopqrstuvwxyz0123456789
 
-// func, str => boolean if the passed str is palindrome 
-//palindrome reads teh same forward adn backward, afer converting all letters to lowercase and removing all non-alphanumeric char, 
-// alphanumberic char (letters and nums)
-// str, always valid, may contain nums, or other char
-// boolean true if the word reads the same forward and backward after to lower and removing all non-alphanumeric
-// isPalindrome('"A man, a plan, a canal: Panama")
+// function takes prices arr of nums => num that represent max profit tht calc by subtracting the el of the arr from its index+1
+// arr of nums, intg, always valid
+// 
 
-var isPalindrome = function(s) {
-    // declare 2 var first is forwardWord , 2nd is backWardWord
-    // then split, filter and then reverse one and assign it to one var 
-    // conditional to determine if the given stris palindrome or not 
-    let forwardStr = s.toLowerCase().split('').filter(el => '//abcdefghijklmnopqrstuvwxyz0123456789'.includes(el)).join('')
-    let backwardStr = s.toLowerCase().split('').filter(el => '//abcdefghijklmnopqrstuvwxyz0123456789'.includes(el)).reverse().join('')
-
-    return forwardStr === backwardStr
+var maxProfit = function(prices) {
+    if(prices.length === 0) return 0
+    let max = 0
+    let min = Infinity
+    for(let i = 0; i < prices.length ; i++){
+        min = Math.min(min, prices[i])
+        let profit = prices[i] - min
+        max = Math.max(max, profit)
+    }
+    return  max 
 };
 
+console.log(maxProfit([7,6,4,3,1]))
+console.log(maxProfit([2, 4, 1]))
 
-
-console.log(isPalindrome("A man, a plan, a canal: Panama"), 'true')
-console.log(isPalindrome("race a car"), 'false')
-
-
-
-
-
+console.log(Math.min(Infinity, 1))
+console.log(2 - Infinity)
 
 
 
