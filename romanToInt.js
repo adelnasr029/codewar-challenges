@@ -1,5 +1,3 @@
-//abcdefghijklmnopqrstuvwxyz0123456789
-
 // func takes str of letters contains 'IVXLCDM' should return intger 
 // str of 'IVXLCDM' roman nums, always valid 
 // num, intger
