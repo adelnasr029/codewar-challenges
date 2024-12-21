@@ -1,6 +1,3 @@
-//abcdefghijklmnopqrstuvwxyz0123456789
-
-
 function solution(number){
     let romans = {
       "M": 1000,
