@@ -11,9 +11,8 @@ function solution(number){
       "X": 10,
       "IX": 9,
       "v": 5,
-      "IV": 4,
+      "IV":4,
       "I": 1, 
-
     }
     let res = ''
     for(let char in romans){
@@ -25,4 +24,4 @@ function solution(number){
     return res
 }
 
-console.log(solution(4))
+console.log(solution(44999))
