@@ -1,8 +1,3 @@
-//abcdefghijklmnopqrstuvwxyz0123456789
-// func takes an arr of str => return longest common prefix str
-// arr of str, always valid
-// str of common prefix || '' if there's no  common prefix
-// 
 var longestCommonPrefix = function(strs) {
     if (!strs.length) return "";
 
@@ -25,5 +20,3 @@ var longestCommonPrefix = function(strs) {
 
 console.log(longestCommonPrefix(["flower","flow","flight"]))// 'fl'
 console.log(longestCommonPrefix(["dog","racecar","car"]))// ''
-
-console.log('flight'.slice(0, -1))
